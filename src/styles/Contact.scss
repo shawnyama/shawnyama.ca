@@ -1,0 +1,68 @@
+@import './theme/typography.css';
+
+.Contact {
+    position: fixed;
+    bottom: 10rem;
+    right: 5rem;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+    .contact-title {
+        font-family: "Curtain Call";
+        font-size: 2rem;
+        background-color: black;
+        color: white;
+        padding-left: 0.5rem;
+        padding-right: 0.4rem;
+        line-height: 80%;
+        padding-bottom: 0.5rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+    .links {
+        font-family:'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 3.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        svg {
+            font-size: 3rem;
+            color: lightcoral;
+            transition: 0.1s;
+            &:hover {
+                font-size: 3.5rem;
+            }
+        }
+        .site {
+            writing-mode: vertical-rl;
+            font-size: 1rem;
+        }
+    }
+    .tooltip {
+        display: inline;
+        position: absolute;
+        visibility: hidden;
+        right: 80%;
+        animation-direction: alternate;
+        transition: 0.2s;
+        color: black;
+        font-size: 4rem;
+        margin-top: -0.6rem;
+        .description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            display: inline;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+    }
+    svg:hover + .tooltip {
+        visibility: visible;
+        right: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    .Contact {
+        display: none;
+    }
+}

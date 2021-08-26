@@ -1,0 +1,23 @@
+@import './theme/typography.css';
+@import './theme/layout.scss';
+
+.About {
+    @extend .section;
+    h2 img {
+        height: 2.75rem;
+        transform: translate(0, 5px);
+        padding-left: 0.25rem;
+        padding-right: 1rem;
+    }
+    .bio {
+        display: flex;
+         p {
+            padding: 1rem;
+            width: 60%;
+        }
+        img {
+            width: 20rem;
+            height: 5rem;
+        }
+    }
+}

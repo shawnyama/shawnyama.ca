@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Curtain Call";
+    src: url("../../fonts/curtain_call.ttf");
+}
+
+@font-face {
+    font-family: "Star Fox";
+    src: url("../../fonts/Star-Fox-Starwing.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=IBM+Plex+Sans&display=swap');

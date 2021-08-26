@@ -1,0 +1,31 @@
+.layout {
+    max-width: 60%;
+    margin: auto;
+}
+
+.section {
+    @extend .layout;
+    background-color: whitesmoke;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    h2 {
+        font-size: 3rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid lightgrey;
+        color: #000066;
+        //text-shadow: 3px 2px lightcoral;
+    }
+    p {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .layout {
+        max-width: fit-content;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

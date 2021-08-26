@@ -1,0 +1,106 @@
+@import './theme/typography.css';
+@import './theme/layout.scss';
+
+.Nav {
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
+    // overflow: hidden;
+    //background-color: hsl(60, 56%, 91%);
+    background-image: linear-gradient(
+        180deg, 
+        hsla(60, 56%, 91%) 50%,
+        hsla(60, 56%, 91%, 0.5) 50%, 
+    );
+    background-size: 5px 5px;
+    h1 { 
+        @extend .layout;
+        max-width: calc(60% + 2rem);
+        padding: 0;
+        padding-top: 1rem;
+        font-size: 6rem;
+        color: black;
+        //text-shadow: 0px -8px lightgreen;
+    }
+    nav {
+        font-family: "Curtain Call";
+        background-color: #000066;
+        font-size: 2rem;
+        .nav-items {
+            display: flex;
+            max-width: calc(60% + 1rem);
+            margin: auto;
+            .left-items {
+                display: flex;
+                flex-direction: row;
+                .nav-item {
+                    margin-right: 1rem;
+                    color: white;
+                    &:hover {
+                        cursor: pointer;
+                        color: lightcoral;
+                    }
+                }
+                span {
+                    color: white;
+                    margin-right: 1rem;
+                }
+            }
+            .right-items {
+                @extend .left-items;
+                margin-left: auto;
+                .nav-item {
+                    line-height: 90%;
+                    margin-right: 0;
+                    margin-left: 1rem;
+                    &:hover {
+                        color: lightgreen;
+                    }
+                }
+                .divider {
+                    @extend .nav-item;
+                    font-weight: bold;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+            .icon {
+                color: white;
+                font-size: 1.75rem;
+                padding-top: 0.25rem;
+                margin-left: 1rem;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .connect, .icon {
+                display: none;
+            }
+        }
+    }
+}
+
+// right items and left items divs
+
+@media (max-width: 800px) {
+    .Nav {
+        h1 {
+            text-align: center;
+        }
+        nav {
+            padding: 0 2rem 0 2rem;
+            .nav-items {
+                justify-content: center;
+                max-width: 100%;
+                .right-item {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                    border-top: 2px solid white;
+                }
+                .connect, .icon {
+                    display: block;
+                }
+            }
+        }
+    }
+}

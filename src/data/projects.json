@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Covid Connect",
+        "description": "Covid Connect offers you the opportunity to chat with an automated chatbot which is collecting stories of experiences during the Covid-19 pandemic. While you chat with the bot, your comments will be matched with the stories of others, which you can explore. The purpose of this project is to provide visitors an opportunity to tell their stories and to create a",
+        "media": ["b"],
+        "technologies": ["react", "d3js"],
+        "year": "2020 - 2021",
+        "organization": "vialab",
+        "website": "covidconnect.me",
+        "github": "",
+        "color": "#ade1da"
+    },
+    {
+        "title": "Card - IT",
+        "description": "Collaborated in designing a web app that serves as a mental health chatbot for people working from home. Developing a frontend and visualization system that allows users to view stories of others that are similar to their own.",
+        "media": [],
+        "technologies": ["react", "python", "mysql"],
+        "year": "2020 - 2021",
+        "organization": "vialab",
+        "website": "covidconnect.me",
+        "github": "",
+        "color": "#e1d8fd"
+    },
+    {
+        "title": "Covid Connect",
+        "description": "Covid Connect offers you the opportunity to chat with an automated chatbot which is collecting stories of experiences during the Covid-19 pandemic. While you chat with the bot, your comments will be matched with the stories of others, which you can explore. The purpose of this project is to provide visitors an opportunity to tell their stories and to create a sense of community. All chat conversations will be collected to create a public record of experiences in the Covid-19 pandemic.",
+        "media": [],
+        "technologies": ["react", "apache"],
+        "year": "2020 - 2021",
+        "organization": "vialab",
+        "website": "covidconnect.me",
+        "github": "",
+        "color": "#ffa07a"
+    },
+    {
+        "title": "Covid Connect",
+        "description": "Covid Connect offers you the opportunity to chat with an automated chatbot which is collecting stories of experiences during the Covid-19 pandemic. While you chat with the bot, your comments will be matched with the stories of others, which you can explore. The purpose of this project is to provide visitors an opportunity to tell their stories and to create a sense of community. All chat conversations will be collected to create a public record of experiences in the Covid-19 pandemic.",
+        "media": [],
+        "technologies": ["react"],
+        "year": "2020 - 2021",
+        "organization": "vialab",
+        "website": "covidconnect.me",
+        "github": "",
+        "color": "#f08080"
+    },
+    {
+        "title": "Covid Connect",
+        "description": "Covid Connect offers you the opportunity to chat with an automated chatbot which is collecting stories of experiences during the Covid-19 pandemic. While you chat with the bot, your comments will be matched with the stories of others, which you can explore. The purpose of this project is to provide visitors an opportunity to tell their stories and to create a sense of community. All chat conversations will be collected to create a public record of experiences in the Covid-19 pandemic.",
+        "media": [],
+        "technologies": ["react"],
+        "year": "2020 - 2021",
+        "organization": "vialab",
+        "website": "covidconnect.me",
+        "github": "",
+        "color": "#90ee90"
+    }
+]
