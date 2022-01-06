@@ -1,31 +1,24 @@
 @import './theme/typography.css';
 @import './theme/layout.scss';
+@import './theme/colors.scss';
 
 .Nav {
-    // position: fixed;
-    // top: 0;
-    // width: 100%;
-    // overflow: hidden;
-    //background-color: hsl(60, 56%, 91%);
-    background-image: linear-gradient(
-        180deg, 
-        hsla(60, 56%, 91%) 50%,
-        hsla(60, 56%, 91%, 0.5) 50%, 
-    );
-    background-size: 5px 5px;
+    background-color: $green-tint;
     h1 { 
         @extend .layout;
+        font-family: 'Cormorant Garamond', serif;
         max-width: calc(60% + 2rem);
         padding: 0;
         padding-top: 1rem;
         font-size: 6rem;
-        color: black;
-        //text-shadow: 0px -8px lightgreen;
+        color: $deep-sea;
+        text-shadow: 2px 1px lightcoral;
     }
     nav {
-        font-family: "Curtain Call";
-        background-color: #000066;
-        font-size: 2rem;
+        font-family: "Star Fox";
+        background-color: $deep-sea;
+        font-size: 1rem;
+        padding: 0.25rem 0 0.25rem 0;
         .nav-items {
             display: flex;
             max-width: calc(60% + 1rem);
@@ -42,35 +35,25 @@
                     }
                 }
                 span {
-                    color: white;
+                    color: lightcoral;
                     margin-right: 1rem;
                 }
+                
             }
             .right-items {
                 @extend .left-items;
                 margin-left: auto;
                 .nav-item {
-                    line-height: 90%;
                     margin-right: 0;
                     margin-left: 1rem;
-                    &:hover {
-                        color: lightgreen;
-                    }
+                    line-height: 100%;
                 }
                 .divider {
                     @extend .nav-item;
+                    font-size: 2rem;
                     font-weight: bold;
                     pointer-events: none;
                     user-select: none;
-                }
-            }
-            .icon {
-                color: white;
-                font-size: 1.75rem;
-                padding-top: 0.25rem;
-                margin-left: 1rem;
-                &:hover {
-                    cursor: pointer;
                 }
             }
             .connect, .icon {
@@ -85,17 +68,41 @@
 @media (max-width: 800px) {
     .Nav {
         h1 {
+            max-width: 100%;
+            font-size: 5rem;
             text-align: center;
         }
         nav {
-            padding: 0 2rem 0 2rem;
             .nav-items {
                 justify-content: center;
                 max-width: 100%;
-                .right-item {
+                flex-direction: column;
+                .nav-item {
+                    padding: 0.75rem 0 0.75rem 3rem;
+                }
+                .left-items {
+                    flex-direction: column;
+                    span {
+                        display: none;
+                    }
+                }
+                .right-items {
+                    flex-direction: column;
                     margin-left: 0;
-                    margin-top: 1rem;
-                    border-top: 2px solid white;
+                    border-top: 1px solid lavenderblush;
+                    .nav-item {
+                        margin: 0;
+                    }
+                }
+                .icon {
+                    width: 100%;
+                    margin: auto;
+                    color: white;
+                    font-size: 1.75rem;
+                    &:hover {
+                        cursor: pointer;
+                        color: lightcoral;
+                    }
                 }
                 .connect, .icon {
                     display: block;

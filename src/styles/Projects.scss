@@ -1,157 +1,370 @@
-@import './theme/typography.css';
-@import './theme/layout.scss';
+@import "./theme/typography.css";
+@import "./theme/animations.css";
+@import "./theme/colors.scss";
+@import "./theme/layout.scss";
 
 .Projects {
-    @extend .section;
-    //background-color: transparent;
-    h2 svg {
-        font-size: 2rem;
-        padding: 0.2rem;
-        padding-left: 0.25rem;
-        padding-right: 1rem;
+    .hammer-strike {
+        animation: hammer 0.5s;
+        animation-iteration-count: infinite;
     }
-    .project-selection {
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        gap: 1rem;
-        .project-closed {
-            flex: 0 1 calc((100% / 2) - 1rem);
-            height: 23rem;
-            //width: 100%;
-            //min-width: 50%;
-            transition: 1s;
-            width: fit-content;
-            overflow: hidden;
-            
-            border-radius: 0.25rem;
-            background-size: 5px 5px;
-            .project-header {
-                display: flex;
-                flex-direction: column;
-                font-family: "Curtain Call";
-                color: white;
-                background-color: #000066;//rgb(30, 30, 97);
-                text-align: center;
-                padding: 0.5rem;
-                clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
-                //width: 85%;
-                //border-radius: 0.25rem 0.25rem 0.5rem 0.5rem;
-                //margin: auto;
-                //margin-top: 3rem;
-                .title {
-                    font-size: 2rem;
-                    padding-top: 0.5rem;
-                }
-                .technologies {
-                    font-family: "Star Fox";
-                    //font-family: "Curtain Call";
-                    font-size: 0.5rem;
-                    padding: 0.5rem;
-                    .technology {
-                        display: inline-block;
-                        max-width: 5rem;
-                        padding: 0 0.5rem 0 0.5rem;
-                        .icon {
-                            text-align: center;
-                        }
-                        .name {
-                            text-align: center;
-                        }
-                    }
-                }
-            }
-            .details {
-                width: 85%;
-                height: fit-content;
-                margin: auto;
-                padding-top: 1rem;
-                overflow: hidden;
-                .description {
-                    background-color: white;
-                    padding: 1rem;
-                    border-radius: 0.5rem 0.5rem 0 0;
-                }
-                .info {
-                    font-family: "Curtain Call";
-                    font-size: 1rem;
-                    background-color: black;
-                    color: white;
-                    padding: 0.5rem;
-                    border-radius: 0 0 0.5rem 0.5rem;
-                    .technology {
-                        .icon {
 
+    .view-project.a {
+        max-height: 75rem;
+    }
+
+    .view-project {
+        @extend .section;
+
+        // background-size: 40px 40px;
+        // background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
+
+        // display: flex;
+        // flex-direction: column;
+
+        // max-height: 10rem;
+        transition: max-height 5s linear;
+        h2 svg {
+            font-size: 2rem;
+            padding: 0.2rem;
+            padding-left: 0.25rem;
+            padding-right: 1rem;
+            color: $deep-sea;
+        }
+        .media {
+            //height: 11rem;
+
+            //margin: 1rem;
+            padding: 1rem;
+            padding-bottom: 0;
+            img {
+                //height: 11rem;
+                //width: 100%;
+            }
+        }
+        .project-selection {
+            // @for $i from 1 through 3 {
+            // .disk-wrap:nth-child(3n + #{$i}) {
+            .project {
+                padding: 3rem 0;
+                display: flex;
+                border-bottom: 2px dashed $green-pastel;
+                &:nth-last-child(1) {
+                    border-bottom: none;
+                }
+
+                // min-height: 10rem;
+                // height: 20rem;
+                // overflow: hidden;
+                // max-height: 20rem;
+                .project-info {
+                    margin: 0 auto;
+                    .disk-wrap {
+                        border-radius: 1rem;
+                        border-top-right-radius: 7rem;
+                        border-bottom-left-radius: 0.5rem;
+                        width: 205px;
+                        height: 205px;
+                        transform: rotateX(45deg) rotateZ(-45deg) translateZ(0px);
+                        transform-style: preserve-3d;
+                        animation: float 8s ease-in-out infinite;
+                        animation-iteration-count: infinite;
+                        .disk {
+                            position: relative;
+                            transform: translateY(6px) translateZ(10px);
+                            transform-style: preserve-3d;
+                            clip-path: polygon(85% 0, 100% 16%, 100% 100%, 0 100%, 0 0);
+                            width: 200px;
+                            height: 200px;
+                            border-radius: 0.5rem;
+
+                            // margin: auto;
+                            // animation: disk 1s;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                            .reader {
+                                margin-left: 1rem;
+                                height: 50px;
+                                width: 130px;
+                                // border-width: 0;
+                                border-bottom-left-radius: 0.5rem;
+                                border-bottom-right-radius: 0.5rem;
+                                .metal {
+                                    height: 100%;
+                                    width: 80%;
+                                    margin-left: auto;
+                                    border-bottom-left-radius: 0.5rem;
+                                    border-bottom-right-radius: 0.5rem;
+                                    background: linear-gradient(90deg, rgb(236, 236, 236) 20%, rgb(227, 227, 227) 79%);
+                                    .rectangle {
+                                        height: 80%;
+                                        width: 20%;
+                                        margin-left: auto;
+                                        margin-right: 15%;
+                                        border-top: 4px solid rgb(227, 227, 227);
+                                    }
+                                }
+                            }
+                            .sticker {
+                                position: relative;
+                                margin: 1rem;
+                                margin-top: 0.5rem;
+                                width: 82%;
+                                height: 65%;
+                                background-color: $green-tint;
+                                border-radius: 0.5rem;
+                                .project-title {
+                                    font-family: "Cormorant Garamond", serif;
+                                    font-size: 1.5rem;
+                                    padding: 0 0.5rem;
+                                    border-radius: 0.25rem 0.25rem 0 0;
+                                    background-color: $deep-sea;
+                                    color: $green-tint;
+                                }
+                                .organization,
+                                .year {
+                                    margin: 0.5rem;
+                                }
+                                .organization {
+                                    display: flex;
+                                    img {
+                                        width: 30px;
+                                        height: 30px;
+                                        margin-right: 0.5rem;
+                                    }
+                                    div {
+                                        align-self: center;
+                                    }
+                                }
+                            }
                         }
+                    }
+                    .technologies {
+                        // font-family: "Star Fox";
+                        // font-family: "Cormorant Garamond", serif;
+
+                        display: flex;
+                        margin-top: 2rem;
+                        text-align: center;
                         .name {
-                            
+                            margin: 0.25rem;
+                            border-radius: 0.5rem;
+                            padding: 0.15rem 0.2rem 0.2rem 0.2rem;
+                            font-size: 1rem;
+                            font-weight: bold;
+                            color: lightcoral;
+                            background-color: $green-pastel;
+                        }
+                        svg {
+                            color: lightcoral;
                         }
                     }
                 }
-            }
-            
-        }
-        .project-opened {
-            @extend .project-closed;
-            flex: 1 1 100%;
-            transition: 1s;
-            .project-header {
-                flex-direction: row;
-                justify-content: space-between;
-                .title {
-                    padding-left: 1rem;
+                .project-image {
+                    width: 65%;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    background-color: $green-tint;
+                    .description {
+                        overflow-y: auto;
+                        //height: 13rem;
+                    }
+                    img {
+                        border-radius: 0.5rem;
+                        width: 100%;
+                    }
+                    .stats {
+                        //height: 5rem;
+                        display: flex;
+                        overflow: hidden;
+                        padding: 1rem 1.5rem;
+                        border-radius: 0.25rem;
+                        background-color: #e0f2e3;
+                        .stat-grid {
+                            font-family: "IBM Plex Sans", sans-serif;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 20px;
+                            align-content: center;
+                            color: $deep-sea;
+                            div {
+                                svg {
+                                    font-size: 1.1rem;
+                                    margin-right: 0.5rem;
+                                }
+                                a {
+                                    color: lightcoral;
+                                    &:hover {
+                                        opacity: 90%;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-                .technologies {
-                    align-self: flex-end;
-                }
-                
-            }
-            .details {
-                //width: 50%;
             }
         }
     }
 }
+// }
+
+// @for $i from 1 through 3 {
+@keyframes float {
+    //#{$i}
+    0% {
+        transform: rotateX(40deg) rotateZ(-40deg) translateZ(0px);
+        box-shadow: -5px 5px 15px hsla(0, 79%, 72%, 0.6);
+        // box-shadow: -5px 5px 15px hsl(0, 0%, 72%);
+    }
+    50% {
+        transform: rotateX(45deg) rotateZ(-35deg) translateZ(20px);
+        box-shadow: -15px 15px 20px hsla(0, 79%, 65%, 0.6);
+        // box-shadow: -15px 15px 25px hsl(0, 0%, 50%);
+    }
+    100% {
+        transform: rotateX(40deg) rotateZ(-40deg) translateZ(0px);
+        box-shadow: -5px 5px 15px hsla(0, 79%, 72%, 0.6);
+        // box-shadow: -5px 5px 15px hsl(0, 0%, 72%);
+    }
+}
+// }
 
 @media (max-width: 800px) {
     .Projects {
+        .view-project {
+            .stats {
+                .technologies {
+                    flex-direction: column;
+                    .name {
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+        }
         .project-selection {
-            grid-template-columns: 1fr;
+            max-width: 100%;
+            grid-template-columns: repeat(1fr);
         }
     }
 }
 
-/*
+//             .project-header {
+//                 display: flex;
+//                 flex-direction: column;
+//                 font-family: "Curtain Call";
+//                 color: white;
+//                 background-color: #000066;//rgb(30, 30, 97);
+//                 text-align: center;
+//                 padding: 0.5rem;
+//                 clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+//                 //width: 85%;
+//                 //border-radius: 0.25rem 0.25rem 0.5rem 0.5rem;
+//                 //margin: auto;
+//                 //margin-top: 3rem;
+//                 .title {
+//                     font-size: 2rem;
+//                     padding-top: 0.5rem;
+//                 }
+//                 .technologies {
+//                     font-family: "Star Fox";
+//                     //font-family: "Curtain Call";
+//                     font-size: 0.5rem;
+//                     padding: 0.5rem;
+//                     .technology {
+//                         display: inline-block;
+//                         max-width: 5rem;
+//                         padding: 0 0.5rem 0 0.5rem;
+//                         .icon {
+//                             text-align: center;
+//                         }
+//                         .name {
+//                             text-align: center;
+//                         }
+//                     }
+//                 }
+//             }
+//             .details {
+//                 width: 85%;
+//                 height: fit-content;
+//                 margin: auto;
+//                 padding-top: 1rem;
+//                 overflow: hidden;
+//                 .description {
+//                     background-color: white;
+//                     padding: 1rem;
+//                     border-radius: 0.5rem 0.5rem 0 0;
+//                 }
+//                 .info {
+//                     font-family: "Curtain Call";
+//                     font-size: 1rem;
+//                     background-color: black;
+//                     color: white;
+//                     padding: 0.5rem;
+//                     border-radius: 0 0 0.5rem 0.5rem;
+//                     .technology {
+//                         .icon {
 
-    // .view-project {
-        
-    // }
-    @extend .section;
-    //background-color: transparent;
-    h2 svg {
-        font-size: 2rem;
-        padding: 0.2rem;
-        padding-left: 0.25rem;
-        padding-right: 1rem;
-    }
+//                         }
+//                         .name {
 
-    .project-selection {
-        max-width: 60%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 0.5rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        .po {
-            height: 150px;
-            width: 150px;
-            background: #522d5b;
-            clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
-            border-radius: 0.25rem;
-            margin: auto;
-            &:hover {
-                transform: rotate(1deg);
-            }
-        }*/
+//                         }
+//                     }
+//                 }
+//             }
+// .disk-back {
+//     height: 150px;
+//     width: 150px;
+//     // z-index: -1;
+
+//     transform: translateZ(-10px);
+//     clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+//     border-radius: 0.25rem;
+//     margin: auto;
+//     // transition: 0.1s;
+//     padding-top: 0.5rem;
+//     // animation: disk 1s;
+//     animation-iteration-count: infinite;
+//     &:hover {
+//         transform: rotate(1deg);
+//         cursor: pointer;
+//     }
+// }
+//             .disk-slot {
+//     display: flex;
+//     justify-content: center;
+//     font-family: "IBM Plex Sans", sans-serif;
+//     margin-top: 0.75rem;
+//     color: lightcoral;
+//     .label {
+//         font-size: 0.8rem;
+//     }
+//     .arrow1 {
+//         position: relative;
+//         font-family: "Times New Roman", Times, serif;
+//         animation: arrow-animation 1s;
+//         animation-iteration-count: infinite;
+//         width: 10px;
+//         padding: 0 1rem 0 1rem;
+//         font-weight: bold;
+//         font-size: 1rem;
+//         line-height: 100%;
+//     }
+//     .arrow2 {
+//         @extend .arrow1;
+//         animation: arrow-animation2 1s;
+//         animation-iteration-count: infinite;
+//     }
+//     .slot {
+//         width: 175px;
+//         height: 1rem;
+//         border-radius: 3px;
+//         background: linear-gradient(black 5%, whitesmoke 100%);
+//         margin: 0 0.2rem 0 0.2rem;
+//     }
+// }

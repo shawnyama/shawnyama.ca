@@ -1,6 +1,23 @@
+@import './colors.scss';
+
 .layout {
     max-width: 60%;
     margin: auto;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $green-tint; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightcoral;
+    border-radius: 20px;
+    border: 0.35rem solid transparent; 
+    background-clip: padding-box;
 }
 
 .section {
@@ -9,22 +26,23 @@
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
+    // transition: 0.25s;
     h2 {
+        font-family: 'Cormorant Garamond', serif;
         font-size: 3rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid lightgrey;
-        color: #000066;
-        //text-shadow: 3px 2px lightcoral;
+        color: lightcoral;
     }
     p {
-        font-family: 'IBM Plex Sans', sans-serif;
+        color: $deep-sea;
         font-size: 1.1rem;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .layout {
-        max-width: fit-content;
+        max-width: 100%;
         margin-left: 1rem;
         margin-right: 1rem;
     }

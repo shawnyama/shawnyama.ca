@@ -4,7 +4,7 @@ import '../styles/Footer.scss'
 const Footer = () => {
 	return (
 		<div className="Footer">
-            &#x000A9; 2021 Shawn Yama
+            &#x000A9; 2022 Shawn Yama
 		</div>
 	)
 }

@@ -1,11 +1,13 @@
+@import './theme/colors.scss';
+
 .Footer {
-    font-family: 'IBM Plex Sans', sans-serif;
     height: 6rem;
     padding: 1rem;
     padding-top: 3rem;
     margin-top: 2rem;
-    background-color:#000066;
+    background-color: $deep-sea;
     color: white;
     text-align: center;
     font-size: 1.1rem;
+    color: lightcoral;
 }

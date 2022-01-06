@@ -6,9 +6,9 @@
 }
 
 main {
-    font-family: 'Cormorant Garamond', serif;
-    background-color: lavender;
+    font-family: "IBM Plex Sans", sans-serif;
+    background-color: #c1e4c8;
     height: 100%;
     overflow-x: hidden;
-
+    
 }

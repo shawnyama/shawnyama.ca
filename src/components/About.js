@@ -1,9 +1,9 @@
 import * as React from 'react'
-import face from '../../public/static/face.svg'
+import face from '../images/face.svg'
 import '../styles/About.scss'
 
 const About = () => {
-	return (
+	return (//Put skills here
 		<div className="About">
 			<h2><img src={face} alt="About"></img>ABOUT</h2>
             <div className="bio">
