@@ -25,20 +25,21 @@ const Nav = () => {
 								<div className="nav-item">ABOUT</div>
 								<span>~</span>
 								<div className="nav-item">PROJECTS</div>
-								<span className="connect">~</span>
-								<div className="nav-item connect">CONNECT</div>
 							</div>
 							<div className="right-items">
+								<div className="nav-item connect">github</div>
+								<div className="nav-item connect">linkedin</div>
+								<div className="nav-item connect">email</div>
 								<div className="nav-item">resume</div>
+								
 							</div>
 						</>
 					}
-					<FontAwesomeIcon
-						icon={!openMenu ? faBars : faChevronCircleUp}
-						className="icon"
-						style={{ padding: openMenu && "0.5rem 0 0.5rem 0" }}
-						onClick={() => setOpenMenu(!openMenu)}
-					/>
+					<div className="openclose">
+						<span onClick={() => setOpenMenu(!openMenu)}>
+							{!openMenu ? 'menu' : 'X'}
+						</span>
+					</div>
 				</div>
 			</nav>
 		</div>

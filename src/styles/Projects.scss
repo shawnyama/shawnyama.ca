@@ -16,13 +16,6 @@
     .view-project {
         @extend .section;
 
-        // background-size: 40px 40px;
-        // background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
-
-        // display: flex;
-        // flex-direction: column;
-
-        // max-height: 10rem;
         transition: max-height 5s linear;
         h2 svg {
             font-size: 2rem;
@@ -31,35 +24,22 @@
             padding-right: 1rem;
             color: $deep-sea;
         }
-        .media {
-            //height: 11rem;
-
-            //margin: 1rem;
-            padding: 1rem;
-            padding-bottom: 0;
-            img {
-                //height: 11rem;
-                //width: 100%;
-            }
-        }
         .project-selection {
-            // @for $i from 1 through 3 {
-            // .disk-wrap:nth-child(3n + #{$i}) {
             .project {
                 padding: 3rem 0;
                 display: flex;
+                justify-content: center;
                 border-bottom: 2px dashed $green-pastel;
                 &:nth-last-child(1) {
                     border-bottom: none;
                 }
-
-                // min-height: 10rem;
-                // height: 20rem;
-                // overflow: hidden;
-                // max-height: 20rem;
-                .project-info {
-                    margin: 0 auto;
+                .project-stats {
+                    flex: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     .disk-wrap {
+                        margin: 0 auto;
                         border-radius: 1rem;
                         border-top-right-radius: 7rem;
                         border-bottom-left-radius: 0.5rem;
@@ -69,6 +49,9 @@
                         transform-style: preserve-3d;
                         animation: float 8s ease-in-out infinite;
                         animation-iteration-count: infinite;
+                        &:hover {
+                            cursor: pointer;
+                        }
                         .disk {
                             position: relative;
                             transform: translateY(6px) translateZ(10px);
@@ -78,12 +61,6 @@
                             height: 200px;
                             border-radius: 0.5rem;
 
-                            // margin: auto;
-                            // animation: disk 1s;
-
-                            &:hover {
-                                cursor: pointer;
-                            }
                             .reader {
                                 margin-left: 1rem;
                                 height: 50px;
@@ -141,45 +118,77 @@
                             }
                         }
                     }
-                    .technologies {
-                        // font-family: "Star Fox";
-                        // font-family: "Cormorant Garamond", serif;
-
-                        display: flex;
-                        margin-top: 2rem;
-                        text-align: center;
-                        .name {
-                            margin: 0.25rem;
-                            border-radius: 0.5rem;
-                            padding: 0.15rem 0.2rem 0.2rem 0.2rem;
-                            font-size: 1rem;
-                            font-weight: bold;
-                            color: lightcoral;
-                            background-color: $green-pastel;
+                    .technologies-wrapper {
+                        border: 1px solid lightcoral;
+                        border-radius: 0.25rem;
+                        color: lightcoral;
+                        padding-bottom: 0.5rem;
+                        margin-right: 1rem;
+                        h3 {
+                            font-family: "Cormorant Garamond", serif;
+                            font-size: 1.25rem;
+                            width: fit-content;
+                            padding: 0 1rem;
+                            margin: auto;
+                            margin-top: -0.8rem;
+                            
+                            background: whitesmoke;
                         }
-                        svg {
-                            color: lightcoral;
+                        .technologies {
+                            // font-family: "Star Fox";
+                            // font-family: "Cormorant Garamond", serif;
+
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-evenly;
+                            // margin-top: 2rem;
+                            .technology {
+                                flex: 0 0 33.333333%;
+                                margin: 0.5rem 0;
+                                .name {
+                                    width: fit-content;
+                                    border-radius: 0.5rem;
+                                    padding: 0.15rem 0.3rem 0.2rem 0.3rem;
+                                    font-size: 1rem;
+                                    font-weight: bold;
+                                    color: lightcoral;
+                                    background-color: $green-pastel;
+                                    text-align: center;
+                                    margin: auto;
+                                }
+                                .icon {
+                                    color: lightcoral;
+                                    text-align: center;
+                                    height: min-content;
+                                    svg {
+                                        width: 3.5rem;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-                .project-image {
-                    width: 65%;
+                .project-description {
+                    flex: 70%;
                     padding: 1rem;
                     border-radius: 0.5rem;
                     background-color: $green-tint;
                     .description {
+                        font-size: 1.25rem;
+
                         overflow-y: auto;
                         //height: 13rem;
                     }
                     img {
                         border-radius: 0.5rem;
+                        margin: 1rem 0;
                         width: 100%;
                     }
                     .stats {
                         //height: 5rem;
                         display: flex;
                         overflow: hidden;
-                        padding: 1rem 1.5rem;
+                        // padding: 1rem 1.5rem;
                         border-radius: 0.25rem;
                         background-color: #e0f2e3;
                         .stat-grid {
@@ -208,28 +217,21 @@
         }
     }
 }
-// }
 
-// @for $i from 1 through 3 {
 @keyframes float {
-    //#{$i}
     0% {
         transform: rotateX(40deg) rotateZ(-40deg) translateZ(0px);
         box-shadow: -5px 5px 15px hsla(0, 79%, 72%, 0.6);
-        // box-shadow: -5px 5px 15px hsl(0, 0%, 72%);
     }
     50% {
         transform: rotateX(45deg) rotateZ(-35deg) translateZ(20px);
         box-shadow: -15px 15px 20px hsla(0, 79%, 65%, 0.6);
-        // box-shadow: -15px 15px 25px hsl(0, 0%, 50%);
     }
     100% {
         transform: rotateX(40deg) rotateZ(-40deg) translateZ(0px);
         box-shadow: -5px 5px 15px hsla(0, 79%, 72%, 0.6);
-        // box-shadow: -5px 5px 15px hsl(0, 0%, 72%);
     }
 }
-// }
 
 @media (max-width: 800px) {
     .Projects {
@@ -248,8 +250,18 @@
             }
         }
         .project-selection {
-            max-width: 100%;
-            grid-template-columns: repeat(1fr);
+            .project {
+                flex-direction: column;
+                justify-content: center;
+                .project-info {
+                    .technologies {
+                        display: none;
+                    }
+                }
+                .project-image {
+                    width: 100%;
+                }
+            }
         }
     }
 }

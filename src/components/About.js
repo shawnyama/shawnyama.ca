@@ -2,10 +2,15 @@ import * as React from 'react'
 import face from '../images/face.svg'
 import '../styles/About.scss'
 
+const synonyms = ["HI THERE", "WELCOME", "HELLO", "AHOY", "HOWDY", "GREETINGS"];
+
 const About = () => {
 	return (//Put skills here
 		<div className="About">
-			<h2><img src={face} alt="About"></img>ABOUT</h2>
+			<h2>
+                <img src={face} alt="About"></img> 
+                {`${synonyms[Math.floor(Math.random() * synonyms.length)]}`}
+            </h2>
             <div className="bio">
                 <p>
                     Hi, welcome to my portfolio. I am a Computer Science student at Ontario Tech University. 

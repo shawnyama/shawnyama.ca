@@ -1,7 +1,7 @@
 @import './theme/colors.scss';
 
 .Footer {
-    height: 6rem;
+    height: 12rem;
     padding: 1rem;
     padding-top: 3rem;
     margin-top: 2rem;
@@ -10,4 +10,10 @@
     text-align: center;
     font-size: 1.1rem;
     color: lightcoral;
+    .wave {
+        font-family: "Star Fox";
+        color: white;
+        font-size: 1rem;
+        padding: 1rem;
+    }
 }

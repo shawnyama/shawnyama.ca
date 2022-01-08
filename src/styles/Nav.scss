@@ -9,10 +9,10 @@
         font-family: 'Cormorant Garamond', serif;
         max-width: calc(60% + 2rem);
         padding: 0;
-        padding-top: 1rem;
-        font-size: 6rem;
-        color: $deep-sea;
-        text-shadow: 2px 1px lightcoral;
+        font-size: 5.5rem;
+        color: lightcoral;
+        transition: 0.25s;
+        text-shadow: 3px 3px $green-pastel;
     }
     nav {
         font-family: "Star Fox";
@@ -56,7 +56,7 @@
                     user-select: none;
                 }
             }
-            .connect, .icon {
+            .connect, .openclose {
                 display: none;
             }
         }
@@ -69,7 +69,7 @@
     .Nav {
         h1 {
             max-width: 100%;
-            font-size: 5rem;
+            font-size: 4.5rem;
             text-align: center;
         }
         nav {
@@ -89,22 +89,26 @@
                 .right-items {
                     flex-direction: column;
                     margin-left: 0;
-                    border-top: 1px solid lavenderblush;
+                    border-top: 2px solid $green-pastel;
                     .nav-item {
                         margin: 0;
                     }
                 }
-                .icon {
-                    width: 100%;
-                    margin: auto;
-                    color: white;
-                    font-size: 1.75rem;
-                    &:hover {
-                        cursor: pointer;
-                        color: lightcoral;
+                .openclose {
+                    text-align: center;
+                    color: lightcoral;
+                    margin-bottom: 0.5rem;
+                    cursor: pointer;
+                    span {
+                        background-color: white;
+                        padding: 0.25rem;
+                        &:hover {
+                            background-color: lightcoral;
+                            color: white;
+                        }
                     }
                 }
-                .connect, .icon {
+                .connect, .openclose {
                     display: block;
                 }
             }

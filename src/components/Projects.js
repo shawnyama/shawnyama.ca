@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHammer, faBuilding, faCalendar, faLink, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
-import SvgIcon from './util/SvgIcon';
-import face from '../images/face.svg';
-import vialab from '../images/vialab.png';
-import covidconnect from '../images/opengraph.png';
-import card from '../images/card-it.png';
-import '../styles/Projects.scss';
+import React, { useState } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHammer, faBuilding, faCalendar, faLink, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
+import SvgIcon from './util/SvgIcon'
+import face from '../images/face.svg'
+import vialab from '../images/vialab.png'
+import covidconnect from '../images/opengraph.png'
+import card from '../images/card-it.png'
+import '../styles/Projects.scss'
 
 const Projects = () => {
     const data = useStaticQuery(graphql`
@@ -72,14 +72,11 @@ const Projects = () => {
         <div className="Projects">
             <div className={`view-project ${chosenProject.brief}`}>
                 <h2><FontAwesomeIcon className="hammer" icon={faHammer}></FontAwesomeIcon>PROJECTS</h2>
-                {/* <div className="media">
-                    <img src={card}/>
-                </div> */}
                 <div className="project-selection">
                     {
                         projects.map((project, p) =>
-                            <div className="project">
-                                <div className="project-info" key={p}>
+                            <div className="project" key={p}>
+                                <div className="project-stats">
                                     <div
                                         className="disk-wrap"
                                         style={{ background: `${lightnessAdjust(project.color, -9)}` }}
@@ -124,24 +121,23 @@ const Projects = () => {
                                         </div>
 
                                     </div>
-                                    <div className="technologies">
-                                        {
-                                            project.technologies.map((technology, t) =>
-                                                <div key={t}>
-                                                    <div className="technology">
-                                                        <SvgIcon iconName={iconpaths[technology]} />
-                                                        <div className="name">
-                                                            {technology}
-                                                        </div>
+                                    <div className="technologies-wrapper">
+                                        <h3>Technologies</h3>
+                                        <div className="technologies">
+                                            {
+                                                project.technologies.map((technology, t) =>
+                                                    <div className="technology" key={t}>
+                                                        <div className="icon"><SvgIcon iconName={iconpaths[technology]} /></div>
+                                                        <div className="name">{technology}</div>
                                                     </div>
-                                                </div>
-                                            )
-                                        }
+                                                )
+                                            }
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="project-image">
+                                <div className="project-description">
                                     <p className="description">
-                                        {project.description}
+                                        {project.brief}
                                     </p>
                                     <img src={covidconnect} />
                                     <div className="stats">
@@ -159,13 +155,9 @@ const Projects = () => {
                                                 </div>
                                             }
                                         </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
-
                         )
                     }
                 </div>
