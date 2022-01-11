@@ -9,6 +9,7 @@ import '../styles/index.css'
 const IndexPage = () => {
 	return (
 		<main>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></link>
 			<Nav></Nav>
 			<About></About>
 			<Projects></Projects>

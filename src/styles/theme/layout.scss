@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import "./colors.scss";
 
 .layout {
     max-width: 65%;
@@ -10,13 +10,13 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: $green-tint; 
+    background-color: $green-tint;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: lightcoral;
     border-radius: 20px;
-    border: 0.35rem solid transparent; 
+    border: 0.35rem solid transparent;
     background-clip: padding-box;
 }
 
@@ -26,9 +26,9 @@
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    // transition: 0.25s;
+    transition: 0.25s;
     h2 {
-        font-family: 'Cormorant Garamond', serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 3rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid lightgrey;
@@ -40,14 +40,94 @@
     }
 }
 
+.technologies-wrapper {
+    border: 4px double lightcoral;
+    border-radius: 0.5rem;
+    color: lightcoral;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    background-color: $green-tint;
+    h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        width: fit-content;
+        padding: 0 1rem;
+        margin: auto;
+        margin-top: -0.8rem;
+        background: whitesmoke;
+        background: linear-gradient(whitesmoke, $green-tint);
+    }
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .technology {
+            flex: 0 0 33.333333%;
+            margin: 0.5rem 0;
+            .name {
+                width: fit-content;
+                border-radius: 0.5rem;
+                padding: 0.15rem 0.3rem 0.2rem 0.3rem;
+                font-size: 1rem;
+                font-weight: bold;
+                color: lightcoral;
+                background-color: $green-pastel;
+                text-align: center;
+                margin: auto;
+            }
+            .icon {
+                color: lightcoral;
+                text-align: center;
+                height: min-content;
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
 @media (max-width: 1600px) {
     .layout {
         max-width: 85%;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
+    .technologies-wrapper .technologies {
+        .name {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .icon {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 900px) {
     .layout {
-        max-width: 90%;
+        max-width: 100%;
+    }
+
+    .section {
+        border-radius: 0;
+    }
+
+    .technologies-wrapper {
+        margin-right: 0;
+        h3 {
+            display: none;
+        }
+        .technologies {
+            .technology {
+                flex: 0 0 10%;
+                .name {
+                    margin-top: 0;
+                    margin-bottom: -0.5rem;
+                }
+                .icon {
+                    display: none;
+                }
+            }
+        }
     }
 }

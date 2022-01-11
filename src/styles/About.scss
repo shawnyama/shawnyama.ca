@@ -1,7 +1,7 @@
-@import './theme/typography.css';
-@import './theme/layout.scss';
+@import "./theme/typography.css";
+@import "./theme/layout.scss";
 
-.About {
+#About {
     @extend .section;
     h2 img {
         height: 2.75rem;
@@ -9,15 +9,40 @@
         padding-left: 0.25rem;
         padding-right: 1rem;
     }
-    .bio {
+    .about {
         display: flex;
-         p {
+        .bio {
+            flex: 3;
             padding: 1rem;
-            //width: 60%;
+            p {
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+            .technologies-wrapper {
+                @extend .technologies-wrapper;
+                margin-top: 1.5rem;
+                .technologies {
+                    .technology {
+                        flex: 0 0 15%;
+                    }
+                }
+            }
         }
         img {
-            width: 20rem;
-            height: 5rem;
+            flex: 1.5;
+            padding: 1rem;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    #About {
+        .about {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .technologies-wrapper h3 {
+            display: block;
         }
     }
 }

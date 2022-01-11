@@ -1,30 +1,50 @@
 import * as React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import face from '../images/face.svg'
 import '../styles/About.scss'
 
-const synonyms = ["HI THERE", "WELCOME", "HELLO", "AHOY", "HOWDY", "GREETINGS"];
-
 const About = () => {
-	return (//Put skills here
-		<div className="About">
-			<h2>
-                <img src={face} alt="About"></img> 
-                {`${synonyms[Math.floor(Math.random() * synonyms.length)]}`}
+
+    const aboutData = useStaticQuery(graphql`
+        query {
+            allAboutJson {
+                nodes {
+                    greeting
+                    introduction
+                    skills
+                }
+            }
+        }
+    `).allAboutJson.nodes[0];
+
+    return (
+        <div id="About">
+            <h2>
+                <img src={face} alt="About"></img>
+                {`${aboutData.greeting[Math.floor(Math.random() * aboutData.greeting.length)]}`}
             </h2>
-            <div className="bio">
-                <p>
-                    Hi, welcome to my portfolio. I am a Computer Science student at Ontario Tech University. 
-                    I have chosen this profession due to its creative abundance. Designing an interactive 
-                    digital experience stimulates my logical and creative drives. Whether it's building 
-                    a seamless user interface or an immersive video game, I am enticed. My strong background
-                    in visual arts gives me the artistic-edge needed for a charming and memorable design.
-                    <br/><br/>
-                    Throughout my program I have worked on various software development and data analysis projects collaboratively and individually. This has allowed me to explore many aspects of this field. I want to continue exploring it as much as I can in order to see how I truly want to apply my programming skills. Fortunately, I am in the co-op program which gives me the opportunity to get a good taste of the variety of jobs available for me. Currently I am searching for co-ops for the Fall.
-                </p>
+            <div className="about">
+                <div className="bio">
+                    <p>
+                        {aboutData.introduction.join("")}
+                    </p>
+                    <div className="technologies-wrapper">
+                        <h3>Technical Skills</h3>
+                        <div className="technologies">
+                            {
+                                aboutData.skills.map((technology, t) =>
+                                    <div className="technology" key={t}>
+                                        <div className="name">{technology}</div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+                <img alt="Shawn Yama"/>
             </div>
-			
-		</div>
-	)
+        </div>
+    )
 }
 
 export default About

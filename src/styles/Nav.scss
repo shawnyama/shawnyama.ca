@@ -7,7 +7,7 @@
     h1 { 
         @extend .layout;
         font-family: 'Cormorant Garamond', serif;
-        max-width: calc(60% + 2rem);
+        max-width: calc(65% + 2rem);
         padding: 0;
         font-size: 5.5rem;
         color: lightcoral;
@@ -21,12 +21,14 @@
         padding: 0.25rem 0 0.25rem 0;
         .nav-items {
             display: flex;
-            max-width: calc(60% + 1rem);
+            max-width: calc(65% + 1rem);
             margin: auto;
+            transition: 0.25s;
             .left-items {
                 display: flex;
                 flex-direction: row;
-                .nav-item {
+                .nav-item, a {
+                    text-decoration: none;
                     margin-right: 1rem;
                     color: white;
                     &:hover {
@@ -65,6 +67,17 @@
 
 // right items and left items divs
 
+@media (max-width: 1600px) {
+    .Nav {
+        h1 { 
+            max-width: calc(85% + 2rem);
+        }
+        nav .nav-items {
+            max-width: calc(85% + 1rem);
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .Nav {
         h1 {
@@ -99,7 +112,13 @@
                     color: lightcoral;
                     margin-bottom: 0.5rem;
                     cursor: pointer;
-                    span {
+                    .open{
+                        color: white;
+                        &:hover {
+                            color: lightcoral;
+                        }
+                    }
+                    .close {
                         background-color: white;
                         padding: 0.25rem;
                         &:hover {
