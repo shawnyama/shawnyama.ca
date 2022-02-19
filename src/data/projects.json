@@ -1,0 +1,55 @@
+[
+    {
+        "title": "Card - IT",
+        "brief": "Learn languages and have fun while doing it",
+        "description": "",
+        "images": [],
+        "technologies": [
+            "react",
+            "flask",
+            "python",
+            "socketio",
+            "mysql",
+            "docker"
+        ],
+        "year": "2020 - now",
+        "organization": "vialab",
+        "website": "https://cardit.vialab.ca/",
+        "source": "",
+        "color": "hsl(255, 90%, 92%)"
+    },
+    {
+        "title": "Covid Connect",
+        "brief": "Chat with a robot about covid tough times. designing a web app that serves as a mental health chatbot for people wor designing a web app that serves as a mental health chatbot for people wor",
+        "description": "",
+        "images": [
+            "b"
+        ],
+        "technologies": [
+            "react",
+            "d3js",
+            "webpack",
+            "sass"
+        ],
+        "year": "2020 - 2021",
+        "organization": "vialab",
+        "website": "https://covidconnect.me/",
+        "source": "",
+        "color": "hsl(172, 46%, 78%)"
+    },
+    {
+        "title": "Zelda Timeline",
+        "brief": "A new take on the Zelda timeline",
+        "description": "",
+        "images": [],
+        "technologies": [
+            "react",
+            "sass"
+        ],
+        "year": "2020 - now",
+        "organization": "side project",
+        "website": "",
+        "source": "",
+        "color": "hsl(120, 73%, 75%)"
+    }
+]

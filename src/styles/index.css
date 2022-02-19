@@ -1,0 +1,17 @@
+@import "./theme/typography.css";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    font-family: "IBM Plex Sans", sans-serif;
+    background-color: #c1e4c8;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: hsla(0, 79%, 72%, 0.6);
+}

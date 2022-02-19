@@ -1,0 +1,15 @@
+@keyframes arrow-animation {
+    0%   {left: 0px;}
+    50%  {left: 5px;}
+    100%  {left: 0px;}
+}
+
+@keyframes arrow-animation2 {
+    0%   {left: 0px;}
+    50%  {left: -5px;}
+    100%  {left: 0px;}
+}
+
+@keyframes hammer {
+    50% {transform: rotate(50deg); bottom: 10px; }
+}

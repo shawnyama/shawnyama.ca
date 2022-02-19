@@ -1,0 +1,20 @@
+[
+	{
+		"platform": "GitHub",
+		"address": "https://github.com/shawnyama",
+		"target": "_blank",
+		"icon": "faGithub"
+	},
+	{
+		"platform": "LinkedIn",
+		"address": "https://www.linkedin.com/in/shawn-yama",
+		"target": "_blank",
+		"icon": "faLinkedin"
+	},
+	{
+		"platform": "yama.shawn@outlook.com",
+		"address": "mailto:yama.shawn@outlook.com",
+		"target": "",
+		"icon": "faEnvelope"
+	}
+]
