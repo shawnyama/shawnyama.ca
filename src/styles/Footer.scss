@@ -1,4 +1,4 @@
-@import './theme/colors.scss';
+@import "./theme/colors.scss";
 
 .Footer {
     height: 12rem;
@@ -8,12 +8,10 @@
     background-color: $deep-sea;
     color: white;
     text-align: center;
-    font-size: 1.1rem;
-    color: lightcoral;
+    font-size: 2rem;
+    font-family: "Pixel";
     .wave {
-        font-family: "Star Fox";
-        color: white;
-        font-size: 1rem;
+        color: lightcoral;
         padding: 1rem;
     }
 }

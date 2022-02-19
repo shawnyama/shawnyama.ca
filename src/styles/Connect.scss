@@ -1,7 +1,7 @@
-@import './theme/typography.css';
-@import './theme/animations.css';
-@import './theme/colors.scss';
-@import './theme/layout.scss';
+@import "./theme/typography.css";
+@import "./theme/animations.css";
+@import "./theme/colors.scss";
+@import "./theme/layout.scss";
 
 .Connect {
     position: fixed;
@@ -13,15 +13,15 @@
     text-align: center;
     border-radius: 0.5rem;
     .connect-title {
-        font-family: "Star Fox";
-        font-size: 1rem;
+        font-family: "Pixel";
+        font-size: 2rem;
         background-color: $deep-sea;
         color: white;
         padding: 0.25rem 0.5rem 0.5rem 0.5rem;
         border-radius: 0.5rem 0.5rem 0 0;
     }
     .links {
-        font-family:'Times New Roman', Times, serif;
+        font-family: "Times New Roman", Times, serif;
         font-weight: bold;
         font-size: 3.5rem;
         padding-top: 0.5rem;
@@ -49,7 +49,7 @@
         font-size: 4rem;
         margin-top: -0.6rem;
         .platform {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: "Cormorant Garamond", serif;
             font-size: 2.5rem;
             display: inline;
             margin-right: 0.5rem;
@@ -100,12 +100,13 @@
             border-radius: 0.5rem;
             padding: 1rem;
             justify-content: space-evenly;
-            svg, svg:hover {
+            svg,
+            svg:hover {
                 font-size: 3rem;
             }
         }
         .tooltip {
-           display: none;
+            display: none;
         }
     }
 }
