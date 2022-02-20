@@ -2,11 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHammer, faLink, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
+import { faHammer, faHardHat, faLink, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 // import face from '../images/face.svg'
-// import vialab from '../images/vialab.png'
-// import covidconnect from '../images/opengraph.png'
-// import card from '../images/card-it.png'
 import '../styles/Projects.scss'
 
 const Projects = () => {
@@ -15,21 +12,38 @@ const Projects = () => {
             allProjectsJson {
                 nodes {
                     description
-                    images
+                    image
                     brief
                     year
                     website
                     title
                     technologies
+                    role
                     organization
                     source
                     color
+                    credits {
+                        name
+                        link
+                    }
+                }
+            }
+            allFile(filter: {sourceInstanceName: {eq: "images"}, extension: {eq: "png"}}) {
+                edges {
+                    node {
+                        id
+                        relativePath
+                        childImageSharp {
+                            gatsbyImageData(blurredOptions: {width: 100})
+                        }
+                    }
                 }
             }
         }
     `)
 
     const projects = data.allProjectsJson.nodes;
+    const images = data.allFile.edges;
 
     // Returns a lighter or darker version of an hsl color
     function lightnessAdjust(color, adjustment) {
@@ -53,14 +67,12 @@ const Projects = () => {
                             >
                                 <div
                                     className="disk"
-                                    // onClick={() => { console.log(project); setChosenProject(project); }}
                                     style={{ backgroundImage: `linear-gradient(30deg, ${lightnessAdjust(project.color, 0)}, ${lightnessAdjust(project.color, 8)})` }}
                                     role="button"
                                 >
                                     <div
                                         className="reader"
                                         style={{ background: project.color, border: `2px solid ${project.color}`, borderTop: 'none' }}
-
                                     >
                                         <div className="metal">
                                             <div className="rectangle" style={{ background: project.color }}></div>
@@ -73,7 +85,10 @@ const Projects = () => {
                                         <div className="project-title">{project.title}</div>
                                         {project.organization.length > 0 &&
                                             <div className="organization">
-                                                {/* <StaticImage src="../images/vialab.png" alt="org" /> */}
+                                                <GatsbyImage
+                                                    image={images.find((n) => n.node.relativePath === `${project.organization}.png`).node.childImageSharp.gatsbyImageData}
+                                                    alt={"org"}
+                                                />
                                                 <div>{project.organization}</div>
                                             </div>
                                         }
@@ -82,6 +97,10 @@ const Projects = () => {
                                 </div>
                             </div>
                             <div className="links">
+                                <div className="link">
+                                    <FontAwesomeIcon icon={faHardHat}></FontAwesomeIcon>
+                                    <span> {project.role}</span>
+                                </div>
                                 {project.website.length > 0 &&
                                     <div className="link">
                                         <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
@@ -98,16 +117,14 @@ const Projects = () => {
                             <div className="technologies-wrapper">
                                 <h3>Technologies</h3>
                                 <div className="technologies">
-                                    {
-                                        project.technologies.map((technology, t) =>
-                                            <div className="technology" key={t}>
-                                                <div className="icon">
-                                                    <i className={`devicon-${technology}-plain`}></i>
-                                                </div>
-                                                <div className="name">{technology}</div>
+                                    {project.technologies.map((technology, t) =>
+                                        <div className="technology" key={t}>
+                                            <div className="icon">
+                                                <i className={`devicon-${technology}-plain`}></i>
                                             </div>
-                                        )
-                                    }
+                                            <div className="name">{technology}</div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -115,7 +132,16 @@ const Projects = () => {
                             <p className="description">
                                 {project.brief}
                             </p>
-                            {/* <StaticImage src={`../images/${project.images[0]}`} alt={project.title} /> */}
+                            <GatsbyImage
+                                image={images.find((n) => n.node.relativePath === project.image).node.childImageSharp.gatsbyImageData}
+                                alt={project.title}
+                            />
+                            <p className="credits">
+                                <b>Team</b>
+                                {project.credits.map((credit, c) =>
+                                    <> ~<a href={credit.link}>{credit.name}</a></>
+                                )}
+                            </p>
                         </div>
                     </div>
                 )

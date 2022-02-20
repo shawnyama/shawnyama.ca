@@ -1,9 +1,9 @@
 [
     {
         "title": "Card - IT",
-        "brief": "Learn languages and have fun while doing it",
+        "brief": "Learn Italian verb conjugations through flashcards. Build your own decks to study from and get quizzed on. A new classroom mode is being tested. Competitive and co-op multiplayer quizzes are features that I am currently developing for my thesis.",
         "description": "",
-        "images": [],
+        "image": "card-it.png",
         "technologies": [
             "react",
             "flask",
@@ -12,44 +12,70 @@
             "mysql",
             "docker"
         ],
+        "role": "Full-Stack Developer",
         "year": "2020 - now",
         "organization": "vialab",
         "website": "https://cardit.vialab.ca/",
         "source": "",
-        "color": "hsl(255, 90%, 92%)"
+        "color": "hsl(255, 90%, 92%)",
+        "credits": [
+            {
+                "name": "Christopher Collins",
+                "link": "http://vialab.science.uoit.ca/portfolio/christopher-m-collins"
+            },
+            {
+                "name": "Mariana Shimabukuro",
+                "link": "http://vialab.science.uoit.ca/portfolio/mariana-shimabukuro"
+            },
+            {
+                "name": "Shawn Yama",
+                "link": "https://shawnyama.ca/"
+            },
+            {
+                "name": "Jessica Zipf",
+                "link": "http://vialab.science.uoit.ca/portfolio/jessica-zipf"
+            }
+        ]
     },
     {
         "title": "Covid Connect",
-        "brief": "Chat with a robot about covid tough times. designing a web app that serves as a mental health chatbot for people wor designing a web app that serves as a mental health chatbot for people wor",
+        "brief": "Anonymously chat with a bot about anything Covid related that's been aggravating you. Bubbles containing messages of those with stories similar to you will appear for you to explore. This way visitors won't feel alone in their struggles and form a sense of community.",
         "description": "",
-        "images": [
-            "b"
-        ],
+        "image": "covidconnect.png",
         "technologies": [
             "react",
             "d3js",
+            "pixijs",
             "webpack",
             "sass"
         ],
+        "role": "Front-end, UI/UX Developer",
         "year": "2020 - 2021",
         "organization": "vialab",
         "website": "https://covidconnect.me/",
         "source": "",
-        "color": "hsl(172, 46%, 78%)"
-    },
-    {
-        "title": "Zelda Timeline",
-        "brief": "A new take on the Zelda timeline",
-        "description": "",
-        "images": [],
-        "technologies": [
-            "react",
-            "sass"
-        ],
-        "year": "2020 - now",
-        "organization": "side project",
-        "website": "",
-        "source": "",
-        "color": "hsl(120, 73%, 75%)"
+        "color": "hsl(172, 46%, 78%)",
+        "credits": [
+            {
+                "name": "Simone Arbour",
+                "link": "https://www.ontarioshores.ca/cms/One.aspx?portalId=169&pageId=34036"
+            },
+            {
+                "name": "Nathan Beals",
+                "link": "https://nathanbeals.com/"
+            },
+            {
+                "name": "Christopher Collins",
+                "link": "http://vialab.science.uoit.ca/portfolio/christopher-m-collins"
+            },
+            {
+                "name": "Jennifer Laffier",
+                "link": "https://www.mhda-lab.com/"
+            },
+            {
+                "name": "Shawn Yama",
+                "link": "https://shawnyama.ca/"
+            }
+        ]
     }
 ]

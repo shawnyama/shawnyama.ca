@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 import face from '../images/face.svg'
 import '../styles/About.scss'
 
@@ -42,6 +43,7 @@ const About = () => {
                     </div>
                 </div>
                 <img alt="Shawn Yama"/>
+                {/* <StaticImage src="" alt="Shawn Yama"/> */}
             </div>
         </div>
     )

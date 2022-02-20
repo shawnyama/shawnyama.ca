@@ -45,9 +45,9 @@
                 transform-style: preserve-3d;
                 animation: float 8s ease-in-out infinite;
                 animation-iteration-count: infinite;
-                &:hover {
-                    cursor: pointer;
-                }
+                // &:hover {
+                //     cursor: pointer;
+                // }
                 .disk {
                     position: relative;
                     transform: translateY(6px) translateZ(10px);
@@ -56,7 +56,6 @@
                     width: 200px;
                     height: 200px;
                     border-radius: 0.5rem;
-
                     .reader {
                         margin-left: 1rem;
                         height: 50px;
@@ -116,20 +115,23 @@
             }
             .links {
                 display: flex;
-                flex-direction: column;
                 gap: 1rem;
                 margin-top: 1rem;
+                // justify-content: center;
+                flex-direction: column;
                 .link {
                     width: fit-content;
                     background-color: $green-pastel;
                     padding: 0.4rem;
                     border-radius: 0.5rem;
+                    font-size: 1.1rem;
+                    font-weight: bold;
                     svg {
                         color: $deep-sea;
+                        font-size: 1.2rem;
                     }
                     a {
                         color: lightcoral;
-                        font-weight: bold;
                         margin-left: 0.5rem;
                         &:hover {
                             opacity: 90%;
@@ -154,8 +156,19 @@
                 line-height: 1.5;
             }
             img {
-                border-radius: 0.5rem;
+                border-radius: 0.25rem;
                 width: 100%;
+            }
+            .credits {
+                padding-top: 0.5rem;
+                a {
+                    color: lightcoral;
+                    text-decoration: none;
+                    margin-left: 0.5rem;
+                    &:hover {
+                        opacity: 90%;
+                    }
+                }
             }
         }
     }
