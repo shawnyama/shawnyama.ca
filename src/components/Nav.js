@@ -15,15 +15,13 @@ const Nav = () => {
         }
     `).allConnectJson.nodes;
 
-	const aboutAnchor = document.querySelector("#About");
-	const projectsAnchor = document.querySelector("#Projects");
-
 	const [openMenu, setOpenMenu] = useState(false);
-	const [width, setWidth] = useState(window.innerWidth);
+	const [width, setWidth] = useState();
 
 	const handleResize = () => setWidth(window.innerWidth);
 
 	useEffect(() => {
+		handleResize();
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, [])
@@ -40,7 +38,7 @@ const Nav = () => {
 									className="nav-item"
 									role="menuitem"
 									tabIndex={-1}
-									onClick={() => aboutAnchor.scrollIntoView({ behavior: 'smooth' })}
+									onClick={() => document.querySelector("#About").scrollIntoView({ behavior: 'smooth' })}
 								>
 									ABOUT
 								</div>
@@ -49,7 +47,7 @@ const Nav = () => {
 									className="nav-item"
 									role="menuitem"
 									tabIndex={-1}
-									onClick={() => projectsAnchor.scrollIntoView({ behavior: 'smooth' })}
+									onClick={() => document.querySelector("#Projects").scrollIntoView({ behavior: 'smooth' })}
 								>
 									PROJECTS
 								</div>
