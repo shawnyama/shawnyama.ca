@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import resume from '../docs/ShawnYama_Resume.pdf';
 import '../styles/Nav.scss'
 
 const Nav = () => {
@@ -71,7 +72,9 @@ const Nav = () => {
 									role="menuitem"
 									tabIndex={-1}
 								>
-									resume
+									<a rel="noopener noreferrer" href={resume} target="_blank">
+										resume
+									</a>
 								</div>
 							</div>
 						</>

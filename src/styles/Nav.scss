@@ -29,7 +29,6 @@
                 .nav-item,
                 a {
                     text-decoration: none;
-                    margin-right: 1rem;
                     color: white;
                     &:hover {
                         cursor: pointer;
@@ -38,6 +37,7 @@
                 }
                 span {
                     color: lightcoral;
+                    margin-left: 1rem;
                     margin-right: 1rem;
                 }
             }
@@ -116,14 +116,14 @@
                     .open {
                         font-size: 2rem;
                         color: white;
-                        &:hover {
+                        &:active {
                             color: lightcoral;
                         }
                     }
                     .close {
                         background-color: white;
                         padding: 0.1rem 0.25rem 0.1rem 0.4rem;
-                        &:hover {
+                        &:active {
                             background-color: lightcoral;
                             color: white;
                         }

@@ -40,6 +40,9 @@
         .about {
             display: flex;
             flex-direction: column-reverse;
+            .bio {
+                padding: 0.4rem;
+            }
         }
         .technologies-wrapper h3 {
             display: block;
