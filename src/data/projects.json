@@ -65,10 +65,14 @@
         "year": "2020 - 2021",
         "organization": "vialab",
         "website": {"name": "", "link": "https://covidconnect.me/"},
-        "researchPaper": {"name": "", "link": ""},
+        "researchPaper": {"name": "Research Publication", "link": "https://dl.acm.org/doi/10.1145/3532106.3533545"},
         "source": "",
         "color": "hsl(172, 46%, 78%)",
         "credits": [
+            {
+                "name": "Christopher Collins",
+                "link": "http://vialab.science.uoit.ca/portfolio/christopher-m-collins"
+            },
             {
                 "name": "Simone Arbour",
                 "link": "https://www.ontarioshores.ca/cms/One.aspx?portalId=169&pageId=34036"
@@ -78,16 +82,16 @@
                 "link": "https://nathanbeals.com/"
             },
             {
-                "name": "Christopher Collins",
-                "link": "http://vialab.science.uoit.ca/portfolio/christopher-m-collins"
+                "name": "Shawn Yama",
+                "link": "https://shawnyama.ca/"
             },
             {
                 "name": "Jennifer Laffier",
                 "link": "https://www.mhda-lab.com/"
             },
             {
-                "name": "Shawn Yama",
-                "link": "https://shawnyama.ca/"
+                "name": "Zixin Zhao",
+                "link": "https://vialab.ca/portfolio/zixin-zhao"
             }
         ]
     },
