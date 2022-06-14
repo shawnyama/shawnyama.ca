@@ -1,21 +1,28 @@
 [
     {
-        "title": "Card - IT",
-        "brief": "Learn Italian verb conjugations through flashcards. Build your own decks to study from and get quizzed on. A new classroom mode is being tested. Competitive and co-op multiplayer quizzes are features that I am currently developing for my thesis.",
+        "title": "Card - IT (Versus)",
+        "brief": [
+            "Learn Italian verb conjugations through flashcards! ",
+            "Users can study and be quizzed on decks of verb conjugation flashcards that they organize for themselves. ",
+            "My thesis adds the Versus module which allows multiple users to compete in answering questions quickly and correctly. ",
+            "Players can assist themselves and slow down their opponents by using items gained along the way. "
+        ],
         "description": "",
         "image": "card-it.png",
+        "video":"https://www.youtube.com/embed/9oSdsIuANW4",
         "technologies": [
-            "react",
-            "flask",
-            "python",
-            "socketio",
-            "mysql",
-            "docker"
+            {"name": "react", "format": "plain"},
+            {"name": "python", "format": "plain"},
+            {"name": "flask", "format": "plain"},
+            {"name": "socketio", "format": "plain"},
+            {"name": "mysql", "format": "plain"},
+            {"name": "docker", "format": "plain"}
         ],
         "role": "Full-Stack Developer",
-        "year": "2020 - now",
+        "year": "2020 - 2022",
         "organization": "vialab",
-        "website": "https://cardit.vialab.ca/",
+        "website": {"name": "", "link": "https://cardit.vialab.ca/"},
+        "researchPaper": {"name": "Undergrad Thesis", "link": "https://vialab.ca/wp-content/papercite-data/pdf/yam2022.pdf"},
         "source": "",
         "color": "hsl(255, 90%, 92%)",
         "credits": [
@@ -39,20 +46,26 @@
     },
     {
         "title": "Covid Connect",
-        "brief": "Anonymously chat with a bot about anything Covid related that's been aggravating you. Bubbles containing messages of those with stories similar to you will appear for you to explore. This way visitors won't feel alone in their struggles and form a sense of community.",
+        "brief": [
+            "Anonymously chat with a bot about anything Covid related that's been aggravating you. ",
+            "Bubbles containing messages of those with stories similar to you will appear for you to explore. ",
+            "This way visitors won't feel alone in their struggles and form a sense of community. "
+        ],
         "description": "",
         "image": "covidconnect.png",
+        "video":"",
         "technologies": [
-            "react",
-            "d3js",
-            "pixijs",
-            "webpack",
-            "sass"
+            {"name": "react", "format": "plain"},
+            {"name": "d3js", "format": "plain"},
+            {"name": "pixijs", "format": "plain"},
+            {"name": "webpack", "format": "plain"},
+            {"name": "sass", "format": "plain"}
         ],
         "role": "Front-end, UI/UX Developer",
         "year": "2020 - 2021",
         "organization": "vialab",
-        "website": "https://covidconnect.me/",
+        "website": {"name": "", "link": "https://covidconnect.me/"},
+        "researchPaper": {"name": "", "link": ""},
         "source": "",
         "color": "hsl(172, 46%, 78%)",
         "credits": [
@@ -72,6 +85,30 @@
                 "name": "Jennifer Laffier",
                 "link": "https://www.mhda-lab.com/"
             },
+            {
+                "name": "Shawn Yama",
+                "link": "https://shawnyama.ca/"
+            }
+        ]
+    },
+    {
+        "title": "Mushroom Vengeance",
+        "brief": ["Slice up mushroom beasts."],
+        "description": "",
+        "image": "",
+        "video":"https://www.youtube.com/embed/I9hELDgTDNs",
+        "technologies": [
+            {"name": "unity", "format": "original"},
+            {"name": "csharp", "format": "plain"}
+        ],
+        "role": "2D Game Project",
+        "year": "2022",
+        "organization": "",
+        "website": { "name": "Play Mushroom Vengeance", "link": "https://shawnyama.itch.io/mushroom-vengeance"},
+        "researchPaper": {"name": "", "link": ""},
+        "source": "https://github.com/shawnyama/mushroom-vengeance",
+        "color": "hsl(236, 62%, 31%)",
+        "credits": [
             {
                 "name": "Shawn Yama",
                 "link": "https://shawnyama.ca/"

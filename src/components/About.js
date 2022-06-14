@@ -42,8 +42,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <img alt="Shawn Yama"/>
-                {/* <StaticImage src="" alt="Shawn Yama"/> */}
+                <StaticImage className="shawn" src="../images/shawn.jpg" alt="Shawn Yama"/>
             </div>
         </div>
     )

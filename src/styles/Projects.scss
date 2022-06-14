@@ -88,6 +88,7 @@
                         background-color: $green-tint;
                         border-radius: 0.5rem;
                         .project-title {
+                            text-align: center;
                             font-family: "Cormorant Garamond", serif;
                             font-size: 1.5rem;
                             padding: 0 0.5rem;
@@ -147,20 +148,30 @@
             flex: 70%;
             padding: 0.75rem;
             margin-left: 1rem;
-            border-radius: 0.5rem;
-            background-color: $green-pastel;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            background-color: $green-tint;
+            border-left: 2px dotted lightcoral;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             .description {
-                font-size: 1.4rem;
-                overflow-y: auto;
+                font-size: 1.2rem;
+                // overflow-y: auto;
                 margin-bottom: 0.75rem;
                 line-height: 1.5;
             }
+            img,
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
             img {
                 border-radius: 0.25rem;
-                width: 100%;
             }
             .credits {
                 padding-top: 0.5rem;
+                font-size: 0.85rem;
                 a {
                     color: lightcoral;
                     text-decoration: none;
@@ -201,14 +212,23 @@
                 flex-direction: row-reverse;
                 justify-content: space-between;
                 .link {
-                    // width: 100%;
+                    font-size: 0.9rem;
                 }
             }
         }
         .project-description {
+            border-radius: 0;
+            border: 0;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            background-color: $green-tint;
+            border-top: 2px dotted lightcoral;
             margin-left: 0;
             .description {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
+            }
+            iframe {
+                height: 15rem;
             }
         }
     }

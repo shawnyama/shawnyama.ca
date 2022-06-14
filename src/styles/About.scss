@@ -11,16 +11,20 @@
     }
     .about {
         display: flex;
+        justify-content: stretch;
         .bio {
-            flex: 3;
-            padding: 1rem;
+            flex: 75%;
+            margin: 1rem;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             p {
                 font-size: 1.2rem;
                 line-height: 1.5;
             }
             .technologies-wrapper {
                 @extend .technologies-wrapper;
-                margin-top: 1.5rem;
                 .technologies {
                     .technology {
                         flex: 0 0 15%;
@@ -28,9 +32,10 @@
                 }
             }
         }
-        img {
-            flex: 1.5;
-            padding: 1rem;
+        .shawn {
+            flex: 25%;
+            margin-top: 1rem;
+            border: 2px dotted lightcoral;
         }
     }
 }
@@ -40,12 +45,16 @@
         .about {
             display: flex;
             flex-direction: column-reverse;
+            justify-content: center;
             .bio {
                 padding: 0.4rem;
+                .technologies-wrapper h3 {
+                    display: block;
+                }
             }
-        }
-        .technologies-wrapper h3 {
-            display: block;
+            .shawn {
+                display: none;
+            }
         }
     }
 }
