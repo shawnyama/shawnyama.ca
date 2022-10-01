@@ -1,4 +1,5 @@
 import React from 'react'
+import undergradThesis from '../docs/yam2022.pdf';
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -125,7 +126,7 @@ const Projects = () => {
                             {project.researchPaper.link.length > 0 &&
                                 <div className="link">
                                     <FontAwesomeIcon icon={faBookOpen}></FontAwesomeIcon>
-                                    <a href={project.researchPaper.link} target="_blank" rel="noopener noreferrer">{project.researchPaper.name}</a>
+                                    <a href={project.researchPaper.link === "undergradThesis" ? undergradThesis : project.researchPaper.link} target="_blank" rel="noopener noreferrer">{project.researchPaper.name}</a>
                                 </div>
                             }
                         </div>

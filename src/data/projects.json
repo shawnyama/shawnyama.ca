@@ -22,7 +22,7 @@
         "year": "2020 - 2022",
         "organization": "vialab",
         "website": {"name": "", "link": "https://cardit.vialab.ca/"},
-        "researchPaper": {"name": "Undergrad Thesis", "link": "https://vialab.ca/wp-content/papercite-data/pdf/yam2022.pdf"},
+        "researchPaper": {"name": "Undergrad Thesis", "link": "undergradThesis"},
         "source": "",
         "color": "hsl(255, 90%, 92%)",
         "credits": [
