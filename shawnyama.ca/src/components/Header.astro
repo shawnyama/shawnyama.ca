@@ -1,0 +1,65 @@
+<header>
+  <h1>Shawn Yama</h1>
+  <nav>
+    <ul>
+      <li>
+        <a>About</a>
+      </li>
+      <li>
+        <a>Projects</a>
+      </li>
+      <li>
+        <a>Resume</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style scoped>
+  header {
+    background-color: var(--green-tint);
+  }
+
+  h1,
+  ul {
+    margin: auto;
+    width: 65%;
+    max-width: calc(65% + 2rem);
+  }
+
+  h1 {
+    font-size: 5rem;
+    transition: 0.25s;
+    text-shadow: 3px 3px var(--green-pastel);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--deep-sea);
+    color: white;
+    font-family: "RPGSystem";
+    font-size: 2rem;
+    border-top: 1px dotted lightcoral;
+    border-bottom: 1px dotted lightcoral;
+  }
+
+  ul {
+    text-transform: uppercase;
+    display: flex;
+    list-style: none;
+  }
+
+  li:not(:last-child)::after {
+    content: "~";
+  }
+  a {
+    padding: 0 0.5rem;
+    color: white;
+  }
+
+  a:hover {
+    cursor: pointer;
+    color: lightcoral;
+  }
+</style>

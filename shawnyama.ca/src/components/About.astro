@@ -1,0 +1,71 @@
+---
+import { Content as AboutMD } from "../content/about.md";
+const greetings = ["HI THERE", "WELCOME", "HELLO", "AHOY!", "HOWDY"];
+const skills = [
+  "react",
+  "javascript",
+  "c++",
+  "nodejs",
+  "python",
+  "sql",
+  "docker",
+  "java",
+  "flask",
+  "html/css",
+  "git",
+  "bash",
+  "flutter",
+  "d3js",
+  "pixijs",
+  "OOP",
+  "linux",
+  "vue",
+];
+const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+---
+
+<section>
+  <h2>{greeting}</h2>
+  <article>
+    <div>
+      <p><AboutMD /></p>
+      <ul class="technologies">
+        <h3>Technical Skills</h3>
+        <ul>
+          {
+            skills.map((technology) => (
+              <li>
+                <div>{technology}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </ul>
+    </div>
+    <img alt="Shawn Yama" />
+  </article>
+</section>
+
+<style scoped>
+  article {
+    display: flex;
+    justify-content: stretch;
+  }
+
+  article > * {
+    margin: 0.5rem 0.25rem 0 0.25rem;
+  }
+
+  article > div {
+    flex: 70%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  img {
+    flex: 30%;
+    border: 1px dotted lightcoral;
+  }
+</style>
