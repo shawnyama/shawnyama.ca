@@ -1,1 +1,73 @@
-<section><h2>Projects</h2>sdsds</section>
+---
+import { Icon } from "astro-icon";
+
+const projects = await Astro.glob("../content/projects/*.md");
+
+//frontmatter file url rawContent compiledContent getHeadingsContent default
+---
+
+<section>
+  <h2>
+    <Icon name="pixelarticons:save" />
+    <span>Projects</span>
+  </h2>
+  {
+    projects.map(({ frontmatter, rawContent }) => (
+      <section class="project">
+        <aside>
+          {frontmatter.title}
+          <section class="technologies">
+            <h3>Technologies</h3>
+            <ul>
+              {frontmatter.technologies.map((devicon: string) => (
+                <li>
+                  <div class="icon">
+                    <i class={`devicon-${devicon}-plain`} />
+                  </div>
+                  <div>{devicon}</div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </aside>
+        <article>
+          <p>{rawContent}</p>
+        </article>
+      </section>
+    ))
+  }
+</section>
+
+<style scoped>
+  .project {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px dotted var(--green-pastel);
+  }
+
+  .project:last-child {
+    border-bottom: none;
+  }
+
+  aside {
+    flex: 30%;
+  }
+
+  article {
+    flex: 70%;
+    background-color: var(--green-tint);
+    margin-left: 1rem;
+    padding: 0.75rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left: 1px dotted lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .technologies li {
+    flex: 0 0 33.333333%;
+  }
+</style>

@@ -33,7 +33,7 @@ const greeting = greetings[Math.floor(Math.random() * greetings.length)];
   <article>
     <div>
       <p><AboutMD /></p>
-      <ul class="technologies">
+      <section class="technologies">
         <h3>Technical Skills</h3>
         <ul>
           {
@@ -44,20 +44,13 @@ const greeting = greetings[Math.floor(Math.random() * greetings.length)];
             ))
           }
         </ul>
-      </ul>
+      </section>
     </div>
-    <Image src={shawn} alt="Shawn Yama" />
+    <!-- <Image src={shawn} alt="Shawn Yama" /> -->
   </article>
 </section>
 
 <style scoped>
-  h2 > img {
-    transform: translate(0, 5px);
-    height: 3rem;
-    width: fit-content;
-    padding-right: 1rem;
-  }
-
   article {
     display: flex;
     justify-content: stretch;
@@ -71,6 +64,10 @@ const greeting = greetings[Math.floor(Math.random() * greetings.length)];
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  h2 > img {
+    height: 3rem;
   }
 
   article > img {

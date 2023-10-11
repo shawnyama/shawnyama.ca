@@ -97,9 +97,22 @@ const { title } = Astro.props;
 
   h2 {
     font-size: 3rem;
+    display: flex;
+    align-items: center;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid lightgrey;
     text-transform: uppercase;
+  }
+
+  h2 > img,
+  h2 > svg {
+    height: 2.5rem;
+    width: fit-content;
+    padding-right: 1rem;
+  }
+
+  svg {
+    color: var(--deep-sea);
   }
 
   p {
@@ -148,5 +161,12 @@ const { title } = Astro.props;
     background-color: var(--green-pastel);
     text-align: center;
     margin: auto;
+  }
+
+  .technologies li > .icon {
+    background-color: transparent;
+    height: min-content;
+    font-size: 3rem;
+    min-height: 2rem;
   }
 </style>
