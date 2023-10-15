@@ -1,18 +1,23 @@
 ---
+import { Image } from "astro:assets";
+import vialab from "@assets/vialab.png";
+
 interface Props {
   title: string;
   color: string;
+  organization: string;
+  year: string;
 }
 
-const { title, color } = Astro.props;
+const { title, color, organization, year } = Astro.props;
 
 // Returns a lighter or darker version of an hsl color
 function lightnessAdjust(color: string, adjustment: number) {
-  let newLightness = parseInt(color.substr(14, 15)) + adjustment;
+  let newLightness = parseInt(color.substring(14, 16)) + adjustment;
   if (newLightness === 100) newLightness -= 5;
   // if (newLightness === 0) newLightness+=20;
   // console.log(newLightness)
-  return color.substr(0, 13) + newLightness + "%)";
+  return color.substring(0, 14) + newLightness + "%)";
 }
 ---
 
@@ -39,10 +44,62 @@ function lightnessAdjust(color: string, adjustment: number) {
         <div class="rectangle" style={{ background: color }}></div>
       </div>
     </div>
+    <section style={{ border: `2px solid ${color}` }}>
+      <header>{title}</header>
+      <ul>
+        {
+          organization && (
+            <li>
+              <Image src={vialab} alt="organization" />
+              <span>{organization}</span>
+            </li>
+          )
+        }
+        {year && <li>{year}</li>}
+      </ul>
+    </section>
   </div>
 </div>
 
 <style scoped>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin: 1rem;
+    margin-top: 0.5rem;
+    width: 82%;
+    height: 65%;
+    background-color: var(--green-tint);
+    border-radius: 0.5rem;
+  }
+
+  header {
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: var(--deep-sea);
+    color: var(--green-tint);
+  }
+  ul {
+    font-size: 1.1rem;
+    list-style: none;
+    padding: 0.5rem;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightcoral;
+  }
+  img {
+    width: 28px;
+    height: 28px;
+    margin-right: 0.5rem;
+  }
+
   .disk-wrap {
     margin: 0 auto;
     border-radius: 1rem;
@@ -67,6 +124,7 @@ function lightnessAdjust(color: string, adjustment: number) {
   }
 
   .reader {
+    margin-left: 1rem;
     height: 50px;
     width: 130px;
     border-bottom-left-radius: 0.5rem;
@@ -92,5 +150,20 @@ function lightnessAdjust(color: string, adjustment: number) {
     margin-left: auto;
     margin-right: 15%;
     border-top: 4px solid rgb(227, 227, 227);
+  }
+
+  @keyframes float {
+    0% {
+      transform: rotateX(40deg) rotateZ(-40deg) translateZ(0px);
+      box-shadow: -5px 5px 15px hsla(0, 79%, 72%, 0.6);
+    }
+    50% {
+      transform: rotateX(45deg) rotateZ(-35deg) translateZ(20px);
+      box-shadow: -15px 15px 20px hsla(0, 79%, 65%, 0.6);
+    }
+    100% {
+      transform: rotateX(40deg) rotateZ(-40deg) translateZ(0px);
+      box-shadow: -5px 5px 15px hsla(0, 79%, 72%, 0.6);
+    }
   }
 </style>

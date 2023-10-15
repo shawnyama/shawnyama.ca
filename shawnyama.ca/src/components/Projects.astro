@@ -15,8 +15,12 @@ const projects = await Astro.glob("../content/projects/*.md");
     projects.map(({ frontmatter, rawContent }) => (
       <section class="project">
         <aside>
-          {frontmatter.title}
-          <FloppyDisk title={frontmatter.title} color={frontmatter.color} />
+          <FloppyDisk
+            title={frontmatter.title}
+            color={frontmatter.color}
+            organization={frontmatter.organization}
+            year={frontmatter.year}
+          />
           <section class="technologies">
             <h3>Technologies</h3>
             <ul>
@@ -44,7 +48,7 @@ const projects = await Astro.glob("../content/projects/*.md");
     padding: 2rem 0;
     display: flex;
     justify-content: center;
-    border-bottom: 2px dotted var(--green-pastel);
+    border-bottom: 1px dotted lightcoral;
   }
 
   .project:last-child {
@@ -54,58 +58,6 @@ const projects = await Astro.glob("../content/projects/*.md");
   aside {
     flex: 30%;
   }
-
-  .disk-wrap {
-    margin: 0 auto;
-    border-radius: 1rem;
-    border-top-right-radius: 7rem;
-    border-bottom-left-radius: 0.5rem;
-    width: 205px;
-    height: 205px;
-    transform: rotateX(45deg) rotateZ(-45deg) translateZ(0px);
-    transform-style: preserve-3d;
-    animation: float 8s ease-in-out infinite;
-    animation-iteration-count: infinite;
-  }
-
-  .disk {
-    position: relative;
-    transform: translateY(6px) translateZ(10px);
-    transform-style: preserve-3d;
-    clip-path: polygon(85% 0, 100% 16%, 100% 100%, 0 100%, 0 0);
-    width: 200px;
-    height: 200px;
-    border-radius: 0.5rem;
-  }
-
-  .reader {
-    height: 50px;
-    width: 130px;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-  }
-
-  .metal {
-    height: 100%;
-    width: 80%;
-    margin-left: auto;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    background: linear-gradient(
-      90deg,
-      rgb(236, 236, 236) 20%,
-      rgb(227, 227, 227) 79%
-    );
-  }
-
-  .rectangle {
-    height: 80%;
-    width: 20%;
-    margin-left: auto;
-    margin-right: 15%;
-    border-top: 4px solid rgb(227, 227, 227);
-  }
-
   article {
     flex: 70%;
     background-color: var(--green-tint);
@@ -121,5 +73,39 @@ const projects = await Astro.glob("../content/projects/*.md");
 
   .technologies li {
     flex: 0 0 33.333333%;
+  }
+
+  @media (max-width: 900px) {
+    section {
+      padding: 2rem 0;
+      flex-direction: column;
+      justify-content: center;
+    }
+    aside {
+      justify-content: space-around;
+      margin-bottom: 1rem;
+    }
+    article {
+      border-radius: 0;
+      border: 0;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      border-top: 1px dotted lightcoral;
+      margin-left: 0;
+    }
+    iframe {
+      height: 15rem;
+    }
+
+    /* .links {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      .link {
+        font-size: 0.9rem;
+        svg {
+          font-size: 1rem;
+        }
+      }
+    } */
   }
 </style>
