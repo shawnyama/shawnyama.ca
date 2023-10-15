@@ -2,8 +2,10 @@
 import Connect from "./Connect.astro";
 ---
 
-<footer>© {new Date().getFullYear()} Shawn Yama</footer>
-<Connect />
+<footer>
+  <div>© {new Date().getFullYear()} Shawn Yama</div>
+  <Connect />
+</footer>
 
 <style scoped>
   footer {
@@ -18,8 +20,8 @@ import Connect from "./Connect.astro";
     border-top: 1px dotted lightcoral;
   }
 
-  footer::before,
-  footer::after {
+  footer > div::before,
+  footer > div::after {
     margin: 0 1rem;
     color: lightcoral;
     content: "~";

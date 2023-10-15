@@ -1,0 +1,96 @@
+---
+interface Props {
+  title: string;
+  color: string;
+}
+
+const { title, color } = Astro.props;
+
+// Returns a lighter or darker version of an hsl color
+function lightnessAdjust(color: string, adjustment: number) {
+  let newLightness = parseInt(color.substr(14, 15)) + adjustment;
+  if (newLightness === 100) newLightness -= 5;
+  // if (newLightness === 0) newLightness+=20;
+  // console.log(newLightness)
+  return color.substr(0, 13) + newLightness + "%)";
+}
+---
+
+<div class="disk-wrap" style={{ background: `${lightnessAdjust(color, -9)}` }}>
+  <div
+    class="disk"
+    style={{
+      backgroundImage: `linear-gradient(30deg, ${lightnessAdjust(
+        color,
+        0
+      )}, ${lightnessAdjust(color, 8)})`,
+    }}
+    role="button"
+  >
+    <div
+      class="reader"
+      style={{
+        background: color,
+        border: `2px solid ${color}`,
+        borderTop: "none",
+      }}
+    >
+      <div class="metal">
+        <div class="rectangle" style={{ background: color }}></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+  .disk-wrap {
+    margin: 0 auto;
+    border-radius: 1rem;
+    border-top-right-radius: 7rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 205px;
+    height: 205px;
+    transform: rotateX(45deg) rotateZ(-45deg) translateZ(0px);
+    transform-style: preserve-3d;
+    animation: float 8s ease-in-out infinite;
+    animation-iteration-count: infinite;
+  }
+
+  .disk {
+    position: relative;
+    transform: translateY(6px) translateZ(10px);
+    transform-style: preserve-3d;
+    clip-path: polygon(85% 0, 100% 16%, 100% 100%, 0 100%, 0 0);
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5rem;
+  }
+
+  .reader {
+    height: 50px;
+    width: 130px;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  .metal {
+    height: 100%;
+    width: 80%;
+    margin-left: auto;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: linear-gradient(
+      90deg,
+      rgb(236, 236, 236) 20%,
+      rgb(227, 227, 227) 79%
+    );
+  }
+
+  .rectangle {
+    height: 80%;
+    width: 20%;
+    margin-left: auto;
+    margin-right: 15%;
+    border-top: 4px solid rgb(227, 227, 227);
+  }
+</style>

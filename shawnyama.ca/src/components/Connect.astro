@@ -1,22 +1,24 @@
 ---
+import { Icon } from "astro-icon";
+
 const links = [
   {
     platform: "GitHub",
     address: "https://github.com/shawnyama",
     target: "_blank",
-    icon: "faGithub",
+    icon: "mdi:github",
   },
   {
     platform: "LinkedIn",
     address: "https://www.linkedin.com/in/shawn-yama",
     target: "_blank",
-    icon: "faLinkedin",
+    icon: "mdi:linkedin",
   },
   {
     platform: "yama.shawn@outlook.com",
     address: "mailto:yama.shawn@outlook.com",
     target: "",
-    icon: "faEnvelope",
+    icon: "mdi:email",
   },
 ];
 ---
@@ -28,6 +30,7 @@ const links = [
       links.map((link) => (
         <li>
           <a href={link.address} target={link.target} rel="noopener noreferrer">
+            <Icon name={link.icon} />
             <div class="tooltip">
               <div class="platform">{link.platform}</div>
               <span class="arrow">&#x0007B;</span>
@@ -38,3 +41,135 @@ const links = [
     }
   </ul>
 </aside>
+
+<style scoped>
+  @keyframes arrow-animation {
+    0% {
+      left: 0px;
+    }
+    50% {
+      left: 5px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+  aside {
+    position: fixed;
+    transition: 0.25s;
+    bottom: 50%;
+    right: 10%;
+    transform: translate(50%, 50%);
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+
+  header {
+    font-family: "RPGSystem";
+    font-size: 2rem;
+    border: 1px dotted lightcoral;
+    background-color: var(--deep-sea);
+    color: white;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  ul {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    list-style: none;
+    font-size: 3.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: var(--green-tint);
+  }
+
+  .tooltip {
+    display: inline;
+    position: absolute;
+    visibility: hidden;
+    right: 80%;
+    animation-direction: alternate;
+    transition: 0.2s;
+    color: lightcoral;
+    font-size: 4rem;
+    margin-top: -0.6rem;
+  }
+  .platform {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    display: inline;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    background-color: hsl(130, 41%, 91%, 0.8);
+    border: 1px dashed lightcoral;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+  .arrow {
+    position: relative;
+    color: var(--deep-sea);
+    text-shadow: 2px 1px lightcoral;
+    animation: arrow-animation 1s;
+    animation-iteration-count: infinite;
+    width: 2rem;
+  }
+
+  a:hover {
+    background-color: transparent;
+    outline: none;
+  }
+
+  svg {
+    color: lightcoral;
+    height: 4rem;
+    transition: 0.1s;
+  }
+
+  svg:hover {
+    scale: 1.1;
+    opacity: 90%;
+  }
+
+  svg:hover + .tooltip {
+    visibility: visible;
+    right: 90%;
+  }
+
+  @media (max-width: 1600px) {
+    aside {
+      right: 5%;
+    }
+    header {
+      display: none;
+    }
+    ul {
+      background-color: transparent;
+    }
+    .arrow {
+      margin-right: 1rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    aside {
+      position: static;
+      transform: translateY(0%);
+      max-width: 100%;
+      margin: 2rem 1rem;
+    }
+    header {
+      display: none;
+    }
+    ul {
+      display: flex;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      justify-content: space-evenly;
+    }
+    .tooltip {
+      display: none;
+    }
+  }
+</style>
