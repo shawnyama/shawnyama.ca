@@ -7,7 +7,11 @@ role: Full-Stack Engineer
 year: 2020 - 2022
 organization: vialab
 website: https://cardit.vialab.ca/
-researchPaper: undergradThesis
+links: [
+    {title: Full-Stack Engineer, icon: mdi:account-hard-hat },
+    {link: https://cardit.vialab.ca/, icon: mdi:link },
+    {title: Undergrad Thesis, icon: mdi:script-text-outline, link: ../../public/pdfs/yam2022.pdf}
+]
 source: ""
 color: hsl(255, 90%, 92%)
 --- 

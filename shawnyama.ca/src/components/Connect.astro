@@ -1,26 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-
-const links = [
-  {
-    platform: "GitHub",
-    address: "https://github.com/shawnyama",
-    target: "_blank",
-    icon: "mdi:github",
-  },
-  {
-    platform: "LinkedIn",
-    address: "https://www.linkedin.com/in/shawn-yama",
-    target: "_blank",
-    icon: "mdi:linkedin",
-  },
-  {
-    platform: "yama.shawn@outlook.com",
-    address: "mailto:yama.shawn@outlook.com",
-    target: "",
-    icon: "mdi:email",
-  },
-];
+import { links } from "@data/links";
 ---
 
 <aside>
@@ -66,7 +46,6 @@ const links = [
   ul {
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    list-style: none;
     font-size: 3.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -154,7 +133,6 @@ const links = [
     ul {
       display: flex;
       border-radius: 0.5rem;
-      padding: 1rem;
       justify-content: space-evenly;
     }
     .tooltip {

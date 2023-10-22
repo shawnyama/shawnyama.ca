@@ -1,17 +1,58 @@
+---
+import { links } from "@data/links";
+---
+
+<script>
+  const menuToggle: any = document.getElementById("menu-toggle");
+  const anchors = document.querySelectorAll("header a");
+  for (let i = 0; i < anchors.length; i++) {
+    anchors[i].addEventListener(
+      "click",
+      () => (menuToggle.checked = false),
+      false
+    );
+  }
+</script>
+
 <header>
   <h1>Shawn Yama</h1>
   <nav>
-    <ul>
-      <li>
-        <a>About</a>
-      </li>
-      <li>
-        <a>Projects</a>
-      </li>
-      <li>
-        <a>Resume</a>
-      </li>
-    </ul>
+    <input type="checkbox" id="menu-toggle" style="display:none;" />
+    <section id="menu">
+      <ul>
+        <li>
+          <a href="#About">About</a>
+        </li>
+        <li>
+          <a href="#Projects">Projects</a>
+        </li>
+      </ul>
+      <ul>
+        {
+          links.map((link, l) => (
+            <li class="connect">
+              <a
+                href={link.address}
+                target={link.target}
+                rel="noopener noreferrer"
+              >
+                {link.platform.toLowerCase()}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            href="../../public/pdfs/ShawnYama_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+        </li>
+      </ul>
+    </section>
+    <label for="menu-toggle"></label>
   </nav>
 </header>
 
@@ -21,10 +62,18 @@
   }
 
   h1,
-  ul {
+  nav > section {
     margin: auto;
     width: 65%;
     max-width: calc(65% + 2rem);
+  }
+
+  label {
+    display: none;
+  }
+  nav > section {
+    display: flex;
+    justify-content: space-between;
   }
 
   h1 {
@@ -47,11 +96,17 @@
   ul {
     text-transform: uppercase;
     display: flex;
-    list-style: none;
+  }
+
+  ul:last-child {
+    text-transform: lowercase;
   }
 
   li:not(:last-child)::after {
     content: "~";
+  }
+  .connect {
+    display: none;
   }
   a {
     padding: 0 0.5rem;
@@ -59,8 +114,80 @@
     text-decoration: none;
   }
 
-  a:hover {
+  a:hover,
+  label:hover {
     cursor: pointer;
     color: lightcoral;
+  }
+
+  @media (max-width: 1600px) {
+    h1,
+    nav > section {
+      max-width: calc(85% + 2rem);
+    }
+  }
+
+  @media (max-width: 800px) {
+    #menu {
+      display: none;
+    }
+    :checked + #menu {
+      display: block;
+    }
+    label {
+      cursor: pointer;
+      display: block;
+      margin: auto;
+    }
+    label::after {
+      content: "menu";
+    }
+    :checked + #menu + label:after {
+      padding: 0.3rem 0.5rem 0 0.6rem;
+      text-shadow: 0 8px white;
+      line-height: 1.5;
+      content: "^";
+    }
+    h1,
+    nav > section,
+    ul {
+      width: 100vw;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+    }
+    nav {
+      flex-direction: column;
+    }
+    nav > section {
+      margin: 0;
+      justify-content: center;
+      flex-direction: column;
+    }
+    ul {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
+    }
+    ul:last-child {
+      margin-left: 0;
+      border-top: 1px dotted lightcoral;
+    }
+    li {
+      padding: 0 1rem;
+    }
+    li > a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+    }
+    li:not(:last-child)::after {
+      content: none;
+    }
+    .connect {
+      display: block;
+    }
   }
 </style>

@@ -10,6 +10,13 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@astro-community/astro-embed-youtube@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@astro-community/astro-embed-youtube/-/astro-embed-youtube-0.4.1.tgz#61f1f48ec1e7c81743c0a33bb55724b91d5a4ea1"
+  integrity sha512-sS3zp3JpCkQl0yl5iCZSuCcankz0Ownjg0Ju5KdON4BJVZUh2gHySCCvqKpsNWwto2VESKi9v7KHi1/R386FZg==
+  dependencies:
+    lite-youtube-embed "^0.2.0"
+
 "@astrojs/compiler@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.2.0.tgz#a6b106b7878b461e3d55715d90810a7df5df3ca2"
@@ -1743,6 +1750,11 @@ kleur@^4.0.3, kleur@^4.1.4:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
   integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
+
+lite-youtube-embed@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/lite-youtube-embed/-/lite-youtube-embed-0.2.0.tgz#db95eab9dd448f02e83de906383350a8033d54fe"
+  integrity sha512-XXXAk5sbvtjjwbie3XG+6HppgTm1HTGL/Uk9z9NkJH53o7puZLur434heHzAjkS60hZB3vT4ls25zl5rMiX4EA==
 
 load-yaml-file@^0.2.0:
   version "0.2.0"

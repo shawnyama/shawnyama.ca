@@ -1,14 +1,16 @@
 ---
 import { Icon } from "astro-icon";
+import Image from "astro:assets";
+import { YouTube } from "@astro-community/astro-embed-youtube";
 import FloppyDisk from "./FloppyDisk.astro";
 
 const projects = await Astro.glob("../content/projects/*.md");
 //frontmatter file url rawContent compiledContent getHeadingsContent default
 ---
 
-<section>
+<section id="Projects">
   <h2>
-    <Icon name="pixelarticons:save" />
+    <Icon name="mdi:hammer-wrench" />
     <span>Projects</span>
   </h2>
   {
@@ -21,10 +23,24 @@ const projects = await Astro.glob("../content/projects/*.md");
             organization={frontmatter.organization}
             year={frontmatter.year}
           />
+          <ul>
+            {frontmatter?.links?.map(({ title, icon, link }) => (
+              <li>
+                <Icon name={icon} />
+                {link ? (
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    {title ?? link}
+                  </a>
+                ) : (
+                  <span>{title}</span>
+                )}
+              </li>
+            ))}
+          </ul>
           <section class="technologies">
             <h3>Technologies</h3>
             <ul>
-              {frontmatter.technologies.map((devicon: string) => (
+              {frontmatter?.technologies?.map((devicon: string) => (
                 <li>
                   <div class="icon">
                     <i class={`devicon-${devicon}-plain`} />
@@ -37,6 +53,9 @@ const projects = await Astro.glob("../content/projects/*.md");
         </aside>
         <article>
           <p>{rawContent}</p>
+          {frontmatter.video && (
+            <YouTube class="video" id={frontmatter.video} />
+          )}
         </article>
       </section>
     ))
@@ -56,10 +75,38 @@ const projects = await Astro.glob("../content/projects/*.md");
   }
 
   aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 30%;
+  }
+
+  aside > ul {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-direction: column;
+  }
+  aside > ul > li {
+    display: flex;
+    align-items: end;
+    width: fit-content;
+    background-color: var(--green-pastel);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+  }
+  aside > ul > li > svg {
+    color: var(--deep-sea);
+    height: 1.4rem;
+    margin-right: 0.5rem;
+  }
+  aside > ul > li a {
+    text-decoration: underline;
   }
   article {
     flex: 70%;
+    gap: 1rem;
     background-color: var(--green-tint);
     margin-left: 1rem;
     padding: 0.75rem;
@@ -70,7 +117,11 @@ const projects = await Astro.glob("../content/projects/*.md");
     flex-direction: column;
     justify-content: space-between;
   }
-
+  lite-youtube {
+    height: 100%;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
   .technologies li {
     flex: 0 0 33.333333%;
   }
