@@ -9,7 +9,12 @@ import { links } from "@data/links";
     {
       links.map((link) => (
         <li>
-          <a href={link.address} target={link.target} rel="noopener noreferrer">
+          <a
+            href={link.address}
+            target={link.target}
+            aria-label={link.platform}
+            rel="noopener noreferrer"
+          >
             <Icon name={link.icon} />
             <div class="tooltip">
               <div class="platform">{link.platform}</div>

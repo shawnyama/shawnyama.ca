@@ -1,4 +1,6 @@
 ---
+import favicon from "@assets/favicon.ico";
+
 interface Props {
   title: string;
 }
@@ -16,7 +18,7 @@ const { title } = Astro.props;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={favicon} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -29,6 +31,7 @@ const { title } = Astro.props;
   @font-face {
     font-family: "RPGSystem";
     src: url("../../fonts/RPGSystem.ttf");
+    font-display: swap;
   }
 
   :root {
@@ -66,6 +69,21 @@ const { title } = Astro.props;
 
   ::selection {
     background: hsla(0, 79%, 72%, 0.4);
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--green-tint);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: lightcoral;
+    border-radius: 20px;
+    border: 0.35rem solid transparent;
+    background-clip: padding-box;
   }
 
   main > section {
@@ -185,6 +203,7 @@ const { title } = Astro.props;
   @media (max-width: 800px) {
     main > section {
       max-width: 100%;
+      margin-top: 1rem;
       border-radius: 0;
       padding: 1rem 0.5rem;
       box-shadow: none;
