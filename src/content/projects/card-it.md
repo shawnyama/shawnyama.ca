@@ -9,7 +9,7 @@ website: https://cardit.vialab.ca/
 links: [
     {title: Full-Stack Engineer, icon: mdi:account-hard-hat },
     {link: https://cardit.vialab.ca/, icon: mdi:link },
-    {title: Undergrad Thesis, icon: mdi:script-text-outline, link: ../../public/pdfs/yam2022.pdf}
+    {title: Undergrad Thesis, icon: mdi:script-text-outline, link: ../public/pdfs/yam2022.pdf}
 ]
 source: ""
 color: hsl(255, 90%, 92%)
