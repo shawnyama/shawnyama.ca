@@ -1,7 +1,6 @@
 ---
 title: Card - IT (Versus)
 technologies: [react, python, flask, socketio, mysql, docker]
-image: card-it.png
 video: https://www.youtube.com/embed/9oSdsIuANW4
 role: Full-Stack Engineer
 year: 2020 - 2022

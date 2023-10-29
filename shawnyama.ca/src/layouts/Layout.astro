@@ -125,7 +125,6 @@ const { title } = Astro.props;
     border: 3px double lightcoral;
     border-radius: 0.5rem;
     color: lightcoral;
-    padding-bottom: 0.5rem;
     margin-top: 1rem;
     background-color: var(--green-tint);
   }
@@ -169,5 +168,26 @@ const { title } = Astro.props;
     height: min-content;
     font-size: 3rem;
     min-height: 2rem;
+  }
+
+  @media (max-width: 1600px) {
+    main > section {
+      max-width: 85%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .technologies li > .icon {
+      display: none;
+    }
+  }
+
+  @media (max-width: 800px) {
+    main > section {
+      max-width: 100%;
+      border-radius: 0;
+      padding: 1rem 0.5rem;
+      box-shadow: none;
+    }
   }
 </style>

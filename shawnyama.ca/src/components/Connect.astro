@@ -95,19 +95,19 @@ import { links } from "@data/links";
     transition: 0.1s;
   }
 
-  svg:hover {
+  li:hover svg {
     scale: 1.1;
     opacity: 90%;
   }
 
-  svg:hover + .tooltip {
+  li:hover .tooltip {
     visibility: visible;
     right: 90%;
   }
 
   @media (max-width: 1600px) {
     aside {
-      right: 5%;
+      right: 3%;
     }
     header {
       display: none;

@@ -1,11 +1,15 @@
 ---
 import { Icon } from "astro-icon";
-import Image from "astro:assets";
+import { Image } from "astro:assets";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import FloppyDisk from "./FloppyDisk.astro";
+// Import images to be used and insert them into the imageMap
+import covidConnectImg from "@assets/covidconnect.png";
 
 const projects = await Astro.glob("../content/projects/*.md");
-//frontmatter file url rawContent compiledContent getHeadingsContent default
+const imageMap: { [key: string]: ImageMetadata } = {
+  "Covid Connect": covidConnectImg,
+};
 ---
 
 <section id="Projects">
@@ -53,6 +57,9 @@ const projects = await Astro.glob("../content/projects/*.md");
         </aside>
         <article>
           <p>{rawContent}</p>
+          {imageMap[frontmatter.title] && (
+            <Image src={imageMap[frontmatter.title]} alt="Project image" />
+          )}
           {frontmatter.video && (
             <YouTube class="video" id={frontmatter.video} />
           )}
@@ -117,46 +124,70 @@ const projects = await Astro.glob("../content/projects/*.md");
     flex-direction: column;
     justify-content: space-between;
   }
+  article img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
   lite-youtube {
     height: 100%;
     max-width: 100%;
-    border-radius: 0.5rem;
   }
   .technologies li {
     flex: 0 0 33.333333%;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     section {
-      padding: 2rem 0;
       flex-direction: column;
       justify-content: center;
     }
     aside {
       justify-content: space-around;
-      margin-bottom: 1rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    aside > ul {
+      flex-direction: row;
+      justify-content: space-evenly;
+      overflow: hidden;
+    }
+    aside > ul > li {
+      display: flex;
+      align-items: center;
+      max-width: 30%;
+    }
+    aside > ul > li > * {
+      overflow: hidden;
+      overflow-wrap: break-word;
+    }
+    aside svg {
+      display: none;
+    }
+    aside > ul > li,
+    .technologies li > div {
+      font-size: 0.9rem;
     }
     article {
-      border-radius: 0;
       border: 0;
-      border-bottom-left-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-      border-top: 1px dotted lightcoral;
+      border-radius: 0.5rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
       margin-left: 0;
+      padding-top: 0.5rem;
+      border-top: 1px dotted lightcoral;
     }
     iframe {
       height: 15rem;
     }
-
-    /* .links {
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      .link {
-        font-size: 0.9rem;
-        svg {
-          font-size: 1rem;
-        }
-      }
-    } */
+    .technologies h3 {
+      display: none;
+    }
+    .technologies {
+      border: none;
+    }
+    .technologies li {
+      flex: 0 0 10%;
+    }
   }
 </style>

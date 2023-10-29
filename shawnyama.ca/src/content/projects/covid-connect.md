@@ -3,7 +3,7 @@ title: Covid Connect
 technologies: [react, d3js, pixijs, webpack, sass]
 color: hsl(172, 46%, 78%)
 organization: vialab
-year: 2020 - 2021
+year: 2020 - 2021 
 links: [
     {title: "Frontend, UI/UX Engineer", icon: mdi:account-hard-hat },
     {link: https://covidconnect.me/, icon: mdi:link },
