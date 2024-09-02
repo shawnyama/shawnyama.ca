@@ -38,6 +38,7 @@ const { title } = Astro.props;
     --green-tint: hsl(130, 41%, 91%);
     --green-pastel: hsl(132, 39%, 83%);
     --deep-sea: hsl(186, 70%, 12%);
+    --strawberry: hsl(0, 85%, 72%);
   }
 
   * {
@@ -80,7 +81,7 @@ const { title } = Astro.props;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: lightcoral;
+    background-color: var(--strawberry);
     border-radius: 20px;
     border: 0.35rem solid transparent;
     background-clip: padding-box;
@@ -94,19 +95,19 @@ const { title } = Astro.props;
     padding: 1rem;
     border-radius: 0.5rem;
     transition: 0.25s;
-    border: 1px dotted lightcoral;
-    box-shadow: 5px 4px lightcoral;
+    border: 1px dotted var(--strawberry);
+    box-shadow: 5px 4px var(--strawberry);
   }
 
   h1,
   h2,
   h3 {
     font-family: "Cormorant Garamond", serif;
-    color: lightcoral;
+    color: var(--strawberry);
   }
 
   a {
-    color: lightcoral;
+    color: var(--strawberry);
     text-decoration: none;
     border-radius: 0.25rem;
   }
@@ -140,9 +141,9 @@ const { title } = Astro.props;
   }
 
   .technologies {
-    border: 3px double lightcoral;
+    border: 3px double var(--strawberry);
     border-radius: 0.5rem;
-    color: lightcoral;
+    color: var(--strawberry);
     margin-top: 1rem;
     background-color: var(--green-tint);
   }
@@ -153,7 +154,6 @@ const { title } = Astro.props;
     padding: 0 1rem;
     margin: auto;
     margin-top: -0.8rem;
-    background: whitesmoke;
     background: linear-gradient(whitesmoke, var(--green-tint));
   }
   ul {
@@ -175,7 +175,7 @@ const { title } = Astro.props;
     border-radius: 0.5rem;
     padding: 0.15rem 0.3rem 0.2rem 0.3rem;
     font-size: 1rem;
-    color: lightcoral;
+    color: var(--strawberry);
     background-color: var(--green-pastel);
     text-align: center;
     margin: auto;

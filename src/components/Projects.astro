@@ -4,11 +4,13 @@ import { Image } from "astro:assets";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import FloppyDisk from "./FloppyDisk.astro";
 // Import images to be used and insert them into the imageMap
-import covidConnectImg from "@assets/covidconnect.png";
+import covidConnectImg from "@assets/covid-connect.png";
+import zeldaTimelinesImg from "@assets/zelda-timelines.png";
 
 const projects = await Astro.glob("../content/projects/*.md");
 const imageMap: { [key: string]: ImageMetadata } = {
   "Covid Connect": covidConnectImg,
+  "Zelda timelines": zeldaTimelinesImg,
 };
 ---
 
@@ -60,9 +62,7 @@ const imageMap: { [key: string]: ImageMetadata } = {
           {imageMap[frontmatter.title] && (
             <Image src={imageMap[frontmatter.title]} alt="Project image" />
           )}
-          {frontmatter.video && (
-            <YouTube class="video" id={frontmatter.video} />
-          )}
+          {frontmatter.video && <YouTube id={frontmatter.video} />}
         </article>
       </section>
     ))
@@ -74,7 +74,7 @@ const imageMap: { [key: string]: ImageMetadata } = {
     padding: 2rem 0;
     display: flex;
     justify-content: center;
-    border-bottom: 1px dotted lightcoral;
+    border-bottom: 1px dotted var(--strawberry);
   }
 
   .project:last-child {
@@ -93,24 +93,28 @@ const imageMap: { [key: string]: ImageMetadata } = {
     gap: 0.5rem;
     margin-top: 1rem;
     flex-direction: column;
+
+    & > li {
+      display: flex;
+      align-items: end;
+      width: fit-content;
+      background-color: var(--green-pastel);
+      padding: 0.4rem;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+
+      & > svg {
+        color: var(--deep-sea);
+        height: 1.4rem;
+        margin-right: 0.5rem;
+      }
+
+      & a {
+        text-decoration: underline;
+      }
+    }
   }
-  aside > ul > li {
-    display: flex;
-    align-items: end;
-    width: fit-content;
-    background-color: var(--green-pastel);
-    padding: 0.4rem;
-    border-radius: 0.5rem;
-    font-size: 1.1rem;
-  }
-  aside > ul > li > svg {
-    color: var(--deep-sea);
-    height: 1.4rem;
-    margin-right: 0.5rem;
-  }
-  aside > ul > li a {
-    text-decoration: underline;
-  }
+
   article {
     flex: 70%;
     gap: 1rem;
@@ -119,19 +123,22 @@ const imageMap: { [key: string]: ImageMetadata } = {
     padding: 0.75rem;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    border-left: 1px dotted lightcoral;
+    border-left: 1px dotted var(--strawberry);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    & img {
+      max-width: 100%;
+      height: 100%;
+      border-radius: 0.25rem;
+      object-fit: contain;
+    }
   }
-  article img {
-    max-width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+
   lite-youtube {
     height: 100%;
     max-width: 100%;
+    border-radius: 0.25rem;
   }
   .technologies li {
     flex: 0 0 33.333333%;
@@ -146,23 +153,27 @@ const imageMap: { [key: string]: ImageMetadata } = {
       justify-content: space-around;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-    }
-    aside > ul {
-      flex-direction: row;
-      justify-content: space-evenly;
-      overflow: hidden;
-    }
-    aside > ul > li {
-      display: flex;
-      align-items: center;
-      max-width: 30%;
-    }
-    aside > ul > li > * {
-      overflow: hidden;
-      overflow-wrap: break-word;
-    }
-    aside svg {
-      display: none;
+
+      & > svg {
+        display: none;
+      }
+
+      & > ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        overflow: hidden;
+
+        & > li {
+          display: flex;
+          align-items: center;
+          max-width: 30%;
+
+          & > * {
+            overflow: hidden;
+            overflow-wrap: break-word;
+          }
+        }
+      }
     }
     aside > ul > li,
     .technologies li > div {
@@ -175,7 +186,7 @@ const imageMap: { [key: string]: ImageMetadata } = {
       border-top-right-radius: 0;
       margin-left: 0;
       padding-top: 0.5rem;
-      border-top: 1px dotted lightcoral;
+      background-color: whitesmoke;
     }
     iframe {
       height: 15rem;
@@ -185,6 +196,7 @@ const imageMap: { [key: string]: ImageMetadata } = {
     }
     .technologies {
       border: none;
+      margin-top: 0.5rem;
     }
     .technologies li {
       flex: 0 0 10%;
