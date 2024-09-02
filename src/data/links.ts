@@ -7,7 +7,7 @@ export const links = [
   },
   {
     platform: "LinkedIn",
-    address: "https://www.linkedin.com/in/shawn-yama",
+    address: "https://www.linkedin.com/in/shawnyama/",
     target: "_blank",
     icon: "mdi:linkedin",
   },
