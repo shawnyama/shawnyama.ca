@@ -12,8 +12,8 @@ export const links = [
     icon: "mdi:linkedin",
   },
   {
-    platform: "yama.shawn@outlook.com",
-    address: "mailto:yama.shawn@outlook.com",
+    platform: "shawnyama.dev@gmail.com",
+    address: "mailto:shawnyama.dev@gmail.com",
     target: "",
     icon: "mdi:email",
   },
